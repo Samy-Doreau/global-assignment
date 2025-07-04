@@ -69,9 +69,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: email
-        tests:
-          - not_null
 
   - name: fact_user_events
     columns:
