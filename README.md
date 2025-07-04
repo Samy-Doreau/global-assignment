@@ -66,8 +66,6 @@ cp env.example .env
 make up  # or: docker compose up -d
 ```
 
-**What this does:**
-
 - `cp env.example .env` - Creates your local environment file with database credentials
 - `make up` - Starts a PostgreSQL database in Docker with the settings from your `.env` file
 
@@ -146,3 +144,8 @@ After a successful run of `make dbt`, you can manually inspect the objects creat
 - Delete the `pgdata` volume to reset Postgres: `docker compose down -v`.
 - On Apple Silicon you may need to allow x86 emulation for the Postgres image.
 - In case OSX security prevents the installation of Docker Desktop, follow the instructions [in this thread](https://github.com/docker/for-mac/issues/7520#issuecomment-2578291149) to resolve.
+
+# Best practices and proposed terraform repo structure
+
+- [Best Practices & Architecture Overview](docs/BEST_PRACTICES.md)
+- [Terraform Repo Structure](docs/terraform_repo_structure.md)

@@ -45,6 +45,14 @@ Example payloads:
 {"user_id":"user_2","episode_id":"ep_5","timestamp":"2025-07-02T09:45:00Z","event_type":"complete","duration":1800}
 ```
 
+We land data into Postgres (via `scripts/load_events_to_postgres.py`) using a **schema-on-read** approach with three fields:
+
+- `data` - JSON payload containing the complete event record
+- `source_file_name` - indicates which source file the record came from
+- `source_file_loaded_at` - timestamp when the batch was loaded
+
+This approach builds resilience against schema changes by encapsulating the entire record within a JSON payload. dbt then extracts fields from the JSON column during transformation. When the source schema evolves, we can simply add new field extractions to the dbt models without breaking existing pipelines or requiring data reloads.
+
 ### dbt Layering (exact project structure)
 
 1. **staging** (models/1.staging)
@@ -58,39 +66,6 @@ Example payloads:
    - `mart_user_session_metrics` – user-level session KPIs
 
 Materialisations are `view` by default; switch to `table`/`incremental` once volume grows.
-
-## Generate an Entity-Relationship Diagram (ERD)
-
-An ERD visually shows how your data models connect to each other - think of it as a "map" of your database structure. This is incredibly useful for:
-
-- **Understanding relationships**: See which tables join to which others
-- **Documentation**: Share with stakeholders who prefer visual diagrams
-- **Onboarding**: Help new team members understand the data architecture
-- **Validation**: Verify your model design matches your intentions
-
-### How to generate the ERD:
-
-```bash
-# 1. Install dependencies (includes dbterd and graphviz)
-pip install -r requirements.txt
-
-# 2. Build your dbt models first (so dbt-erd can analyze them)
-cd dbt
-dbt deps
-dbt run
-
-# 3. Generate the visual diagram
-dbt-erd render models/ --output ../docs/erd.svg
-```
-
-The `erd.svg` file will show:
-
-- **Tables** as boxes with their columns
-- **Relationships** as connecting lines (foreign keys, joins)
-- **Data types** for each column
-- **Model dependencies** (staging → intermediate → marts)
-
-You can open `docs/erd.svg` in any web browser to view the diagram, or include it in documentation.
 
 ## Assumptions & Next Steps
 
