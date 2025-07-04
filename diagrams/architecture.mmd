@@ -1,0 +1,10 @@
+graph TD
+  A["Mobile & Web Apps"] -->|"JSON events"| B[Kinesis Firehose]
+  B --> C["S3\\nraw_events/yyyymmdd/"]
+  C -->|"S3 Event"| D[Snowpipe]
+  D --> E[Snowflake Stage]
+  E --> F[Snowflake RAW table]
+  F --> G["dbt\\nStaging → Marts"]
+  G --> H[Dashboards / Analytics]
+  G --> I[dbt Docs Lineage]
+  B --> J["CloudWatch DLQ\\n(bad JSON)"] 
