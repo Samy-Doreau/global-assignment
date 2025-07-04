@@ -1,6 +1,6 @@
 # Podcast Analytics Pipeline – Best-Practices Walk-through
 
-> This repository purposefully **trades completeness for clarity**. It is a "table-top" demo that can be run on any laptop in minutes. The choices below therefore focus on demonstrating best-practice _patterns_ rather than building a fully-hardened, cloud-native stack.
+> This repository purposefully **trades completeness for clarity**. It is a very simplified solution that can be run on a laptop in minutes. The choices below therefore focus on demonstrating best-practice _patterns_ rather than building a fully-hardened, cloud-native stack.
 
 ---
 
