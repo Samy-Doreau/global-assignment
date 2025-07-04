@@ -3,7 +3,6 @@
 ## Prerequisites
 
 - Install Docker Desktop ≥ 4
-  - In case OSX security prevent the installation, follow the instructions [in this thread](https://github.com/docker/for-mac/issues/7520#issuecomment-2578291149) to resolve.
 - Python 3.10+
 
 ## Setup Python Environment
@@ -77,7 +76,7 @@ The database will be available at `localhost:5432` with the credentials you spec
 ## 2. Load sample events
 
 ```bash
-make load-data FILE=event_logs.json
+make load-data FILE=data/event_logs.jsonl
 ```
 
 ## 3. Run dbt & generate ERD
@@ -103,8 +102,56 @@ When you're done, you can stop and remove the Postgres container with:
 make down
 ```
 
+## Inspecting the Database
+
+After a successful run of `make dbt`, you can manually inspect the objects created in the database.
+
+1.  **Connect to the Postgres container:**
+
+    ```bash
+    docker exec -it podcast_pg psql -U podcast -d podcast_analytics
+    ```
+
+2.  **Inside `psql`, you can list the created objects:**
+
+    - **List all views (the marts):**
+
+      ```sql
+      \dv
+      ```
+
+      You should see:
+
+      - `mart_top_episodes`
+      - `mart_user_session_metrics`
+      - And all the intermediate/staging models, as they are also created as views by default.
+
+    - **List all tables (the seeds and raw data):**
+
+      ```sql
+      \dt
+      ```
+
+      You should see:
+
+      - `raw_users`
+      - `raw_episodes`
+      - `raw_event_files`
+
+    - **Query a mart view:**
+
+      ```sql
+      SELECT * FROM mart_top_episodes LIMIT 10;
+      ```
+
+    - **Exit `psql`:**
+      ```sql
+      \q
+      ```
+
 ## Troubleshooting
 
 - If dbt cannot connect, ensure the container is healthy: `docker ps`.
 - Delete the `pgdata` volume to reset Postgres: `docker compose down -v`.
 - On Apple Silicon you may need to allow x86 emulation for the Postgres image.
+- In case OSX security prevents the installation of Docker Desktop, follow the instructions [in this thread](https://github.com/docker/for-mac/issues/7520#issuecomment-2578291149) to resolve.

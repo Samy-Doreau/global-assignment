@@ -1,3 +1,5 @@
 dbt/dbt_packages/*
 dbt/target/*
 venv/*
+dbt/target/*
+dbt/dbt_packages/*

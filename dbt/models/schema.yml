@@ -2,11 +2,14 @@ version: 2
 
 sources:
   - name: raw
+    schema: public
     tables:
       - name: event_files
         identifier: raw_event_files
       - name: users
+        identifier: raw_users
       - name: episodes
+        identifier: raw_episodes
 
 models:
   - name: stg_user_events
@@ -20,6 +23,23 @@ models:
         tests:
           - accepted_values:
               values: ["play", "pause", "seek", "complete"]
+
+  - name: stg_user_events_invalid
+    description: "Invalid event records for data quality investigation"
+    columns:
+      - name: issue_type
+        tests:
+          - accepted_values:
+              values:
+                [
+                  "missing_event_type",
+                  "invalid_event_type",
+                  "missing_timestamp",
+                  "malformed_timestamp",
+                  "missing_user_id",
+                  "missing_episode_id",
+                  "other_issue",
+                ]
 
   - name: stg_users
     columns:

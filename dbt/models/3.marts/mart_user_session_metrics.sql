@@ -13,4 +13,4 @@ metrics as (
     from sessions
     group by user_id
 )
-select * from metrics; 
+select * from metrics

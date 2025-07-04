@@ -5,7 +5,7 @@ ifneq (,$(wildcard ./.env))
     export
 endif
 
-.PHONY: up down load-data dbt erd dbt-debug
+.PHONY: up down load-data dbt erd dbt-debug pipeline
 
 up: ## Start postgres via docker-compose
 	docker compose up -d
@@ -28,3 +28,6 @@ dbt: ## Run dbt deps, seed, run, test
 
 erd: ## Generate ERD SVG in docs/ (requires: pip install dbt-erd)
 	cd dbt && dbt-erd render models/ --profiles-dir .. --output ../docs/erd.svg 
+
+pipeline: ## Run full pipeline (truncate->seed->load->dbt->export)
+	python3 scripts/pipeline.py --events $(FILE) 

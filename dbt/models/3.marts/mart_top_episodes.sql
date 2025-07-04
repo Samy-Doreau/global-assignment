@@ -24,11 +24,10 @@ joined as (
     from plays p
     full outer join completions c using(episode_id)
 )
-
 select
     episode_id,
     plays,
     completions,
     {{ dbt_utils.safe_divide('completions', 'plays') }} as completion_rate
 from joined
-order by completion_rate desc; 
+order by completion_rate desc
