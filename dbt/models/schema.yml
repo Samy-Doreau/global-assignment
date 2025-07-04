@@ -54,3 +54,40 @@ models:
         tests:
           - unique
           - not_null
+  - name: dim_episodes
+    columns:
+      - name: episode_id
+        tests:
+          - unique
+          - not_null
+      - name: title
+        tests:
+          - not_null
+  - name: dim_users
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: email
+        tests:
+          - not_null
+
+  - name: fact_user_events
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
+      - name: episode_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_episodes')
+              field: episode_id
+      - name: event_type
+        tests:
+          - accepted_values:
+              values: ["play", "pause", "seek", "complete"]

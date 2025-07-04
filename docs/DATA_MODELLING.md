@@ -2,23 +2,25 @@
 
 ## Overview & Approach
 
-We adopt a classic **star-schema** centred on an **event fact table** (`stg_user_events`). Around this fact we expose slowly-changing **dimensions**:
+We now materialise the fact as `fact_user_events` (table in `3.marts`) and expose two dimensions `dim_users`, `dim_episodes`. Joins:
 
-```
-              +-------------+
-              |  dim_users  |  <-- stg_users
-              +-------------+
-                    |
-+---------+   +------------------+   +---------------+
-| dim_date|---|  fact_user_events|---| dim_episodes  |
-+---------+   +------------------+   +---------------+
-                    |
-              +----------------+
-              |  dim_sessions  |  <-- int_user_sessions
-              +----------------+
+- `fact_user_events.user_id` → `dim_users.user_id`
+- `fact_user_events.episode_id` → `dim_episodes.episode_id`
+
+### Updated star-schema
+
+```mermaid
+graph TD
+  F[fact_user_events] -- user_id --> DU[dim_users]
+  F -- episode_id --> DE[dim_episodes]
+  F -- session_id *> DS[dim_sessions] %% derived from int_user_sessions
 ```
 
-Note: the fact is currently materialised as a _view_ called `stg_user_events`; in a production warehouse we would implement this as an incremental table (e.g. `fact_user_events`) to ensure performance is adequate.
+### Revised dbt Layering
+
+1. **staging** – `stg_*` views (schema-on-read)
+2. **intermediate** – `int_user_sessions` (sessionisation)
+3. **marts** – `fact_user_events`, `dim_users`, `dim_episodes`, plus KPI marts
 
 ### Event Types & JSON shape (actual fields)
 
@@ -52,20 +54,6 @@ We land data into Postgres (via `scripts/load_events_to_postgres.py`) using a **
 - `source_file_loaded_at` - timestamp when the batch was loaded
 
 This approach builds resilience against schema changes by encapsulating the entire record within a JSON payload. dbt then extracts fields from the JSON column during transformation. When the source schema evolves, we can simply add new field extractions to the dbt models without breaking existing pipelines or requiring data reloads.
-
-### dbt Layering (exact project structure)
-
-1. **staging** (models/1.staging)
-   - `stg_user_events` – JSON → typed columns (fact)
-   - `stg_users` / `stg_episodes` – reference CSVs (dimensions)
-   - `stg_user_events_invalid` – quarantines bad rows for data-quality review
-2. **intermediate** (models/2.intermediate)
-   - `int_user_sessions` – derives sessions using 30-min inactivity rule
-3. **marts** (models/3.marts)
-   - `mart_top_episodes` – episode-level engagement metrics
-   - `mart_user_session_metrics` – user-level session KPIs
-
-Materialisations are `view` by default; switch to `table`/`incremental` once volume grows.
 
 ## Assumptions & Next Steps
 

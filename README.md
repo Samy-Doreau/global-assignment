@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Install Docker Desktop ≥ 4
+- Install and run Docker Desktop ≥ 4
 - Python 3.10+
 
 ## Setup Python Environment
@@ -76,6 +76,23 @@ The database will be available at `localhost:5432` with the credentials specifie
 ```bash
 make load-data FILE=data/event_logs.jsonl
 ```
+
+## 3. Run dbt
+
+Run dbt clean, deps, seed, run and test with
+
+```
+make dbt
+```
+
+## 4. Run the full pipeline
+
+Run the full pipeline :
+
+- Truncate models if they exist
+- Load data into the source tables
+- Run dbt
+- Download the contents of the marts table back locally within the data/export folder.
 
 ## 3. Spin down Postgres
 

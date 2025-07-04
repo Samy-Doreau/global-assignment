@@ -6,4 +6,9 @@ model-paths: ["models"]
 seed-paths: ["../seeds"]
 models:
   podcast_analytics:
-    +materialized: view
+    1.staging:
+      +materialized: view
+    2.intermediate:
+      +materialized: view
+    3.marts:
+      +materialized: table
