@@ -1,0 +1,329 @@
+[0m11:54:57.568264 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118092bd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1189115e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118911040>]}
+
+
+============================== 11:54:57.576279 | 78f1d618-9675-41c4-bf99-eb1fda776019 ==============================
+[0m11:54:57.576279 [info ] [MainThread]: Running with dbt=1.10.3
+[0m11:54:57.577737 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt deps --profiles-dir ..', 'send_anonymous_usage_stats': 'True'}
+[0m11:54:57.701282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '78f1d618-9675-41c4-bf99-eb1fda776019', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1180c52b0>]}
+[0m11:54:57.717868 [debug] [MainThread]: Set downloads directory='/var/folders/5k/t5t262f5239fl9vz4lyvw8l00000gn/T/dbt-downloads-8c2v5wyx'
+[0m11:54:57.718257 [error] [MainThread]: Encountered an error:
+">=1.0" is not a valid semantic version.
+[0m11:54:57.721251 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 237, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 285, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 461, in deps
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/task/deps.py", line 215, in run
+    self.lock()
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/task/deps.py", line 187, in lock
+    resolved_deps = resolve_packages(packages, self.project, self.cli_vars)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 121, in resolve_packages
+    pending = PackageListing.from_contracts(packages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 91, in from_contracts
+    self.update_from(src)
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 83, in update_from
+    pkg = RegistryUnpinnedPackage.from_contract(contract)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/registry.py", line 83, in from_contract
+    versions = [semver.VersionSpecifier.from_version_string(v) for v in raw_version]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt_common/semver.py", line 99, in from_version_string
+    raise dbt_common.exceptions.base.SemverError(
+dbt_common.exceptions.base.SemverError: ">=1.0" is not a valid semantic version.
+
+[0m11:54:57.723714 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.22037521, "process_in_blocks": "0", "process_kernel_time": 0.222466, "process_mem_max_rss": "103383040", "process_out_blocks": "0", "process_user_time": 1.166542}
+[0m11:54:57.724093 [debug] [MainThread]: Command `dbt deps` failed at 11:54:57.724024 after 0.22 seconds
+[0m11:54:57.724524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1189112b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10766d8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118119970>]}
+[0m11:54:57.725753 [debug] [MainThread]: Flushing usage events
+[0m11:54:58.147527 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:55:39.547813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050dbaa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10540d550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10540cfb0>]}
+
+
+============================== 11:55:39.551850 | 2888fc73-76b8-49f2-ae13-007a37703012 ==============================
+[0m11:55:39.551850 [info ] [MainThread]: Running with dbt=1.10.3
+[0m11:55:39.552343 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug --profiles-dir ..', 'send_anonymous_usage_stats': 'True'}
+[0m11:55:39.567376 [info ] [MainThread]: dbt version: 1.10.3
+[0m11:55:39.568148 [info ] [MainThread]: python version: 3.12.3
+[0m11:55:39.568807 [info ] [MainThread]: python path: /Users/samydoreau/global-assignment/venv/bin/python3.12
+[0m11:55:39.569298 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m11:55:39.582046 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'POSTGRES_USER'
+[0m11:55:39.584541 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.09305971, "process_in_blocks": "0", "process_kernel_time": 0.142727, "process_mem_max_rss": "104120320", "process_out_blocks": "0", "process_user_time": 0.865572}
+[0m11:55:39.585017 [debug] [MainThread]: Command `dbt debug` failed at 11:55:39.584937 after 0.09 seconds
+[0m11:55:39.585353 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105131760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10546aed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10540d220>]}
+[0m11:55:39.585695 [debug] [MainThread]: Flushing usage events
+[0m11:55:39.970145 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:56:54.283488 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10738dfd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107cf5880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107cf51f0>]}
+
+
+============================== 11:56:54.289700 | 353c0836-dc5c-4882-a024-781939cca586 ==============================
+[0m11:56:54.289700 [info ] [MainThread]: Running with dbt=1.10.3
+[0m11:56:54.290224 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug --profiles-dir ..', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:56:54.303137 [info ] [MainThread]: dbt version: 1.10.3
+[0m11:56:54.303706 [info ] [MainThread]: python version: 3.12.3
+[0m11:56:54.304057 [info ] [MainThread]: python path: /Users/samydoreau/global-assignment/venv/bin/python3.12
+[0m11:56:54.304261 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit
+[0m11:56:54.405473 [info ] [MainThread]: Using profiles dir at ..
+[0m11:56:54.406588 [info ] [MainThread]: Using profiles.yml file at ../profiles.yml
+[0m11:56:54.407583 [info ] [MainThread]: Using dbt_project.yml file at /Users/samydoreau/global-assignment/dbt/dbt_project.yml
+[0m11:56:54.409384 [info ] [MainThread]: adapter type: postgres
+[0m11:56:54.409856 [info ] [MainThread]: adapter version: 1.9.0
+[0m11:56:54.525226 [info ] [MainThread]: Configuration:
+[0m11:56:54.526057 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:56:54.526423 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:56:54.526675 [info ] [MainThread]: Required dependencies:
+[0m11:56:54.527018 [debug] [MainThread]: Executing "git --help"
+[0m11:56:54.549980 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:56:54.550844 [debug] [MainThread]: STDERR: "b''"
+[0m11:56:54.551147 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:56:54.551424 [info ] [MainThread]: Connection:
+[0m11:56:54.551679 [info ] [MainThread]:   host: localhost
+[0m11:56:54.551891 [info ] [MainThread]:   port: 5432
+[0m11:56:54.552094 [info ] [MainThread]:   user: podcast
+[0m11:56:54.552288 [info ] [MainThread]:   database: podcast_analytics
+[0m11:56:54.552488 [info ] [MainThread]:   schema: public
+[0m11:56:54.552684 [info ] [MainThread]:   connect_timeout: 10
+[0m11:56:54.552883 [info ] [MainThread]:   role: None
+[0m11:56:54.553081 [info ] [MainThread]:   search_path: None
+[0m11:56:54.553278 [info ] [MainThread]:   keepalives_idle: 0
+[0m11:56:54.553472 [info ] [MainThread]:   sslmode: None
+[0m11:56:54.553861 [info ] [MainThread]:   sslcert: None
+[0m11:56:54.554144 [info ] [MainThread]:   sslkey: None
+[0m11:56:54.554484 [info ] [MainThread]:   sslrootcert: None
+[0m11:56:54.554900 [info ] [MainThread]:   application_name: dbt
+[0m11:56:54.555185 [info ] [MainThread]:   retries: 1
+[0m11:56:54.555958 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m11:56:54.641207 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m11:56:54.690715 [debug] [MainThread]: Using postgres connection "debug"
+[0m11:56:54.691282 [debug] [MainThread]: On debug: select 1 as id
+[0m11:56:54.691613 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:56:54.822424 [debug] [MainThread]: SQL status: SELECT 1 in 0.131 seconds
+[0m11:56:54.823362 [debug] [MainThread]: On debug: Close
+[0m11:56:54.823906 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:56:54.824227 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:56:54.827100 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.6103903, "process_in_blocks": "0", "process_kernel_time": 0.218588, "process_mem_max_rss": "118161408", "process_out_blocks": "0", "process_user_time": 0.994296}
+[0m11:56:54.827587 [debug] [MainThread]: Command `dbt debug` succeeded at 11:56:54.827509 after 0.61 seconds
+[0m11:56:54.827868 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:56:54.828161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1203e3740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120026b40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x120024c20>]}
+[0m11:56:54.828499 [debug] [MainThread]: Flushing usage events
+[0m11:56:55.213428 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:57:04.968394 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a88fe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108bad9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108bad340>]}
+
+
+============================== 11:57:04.971311 | bfc4cac2-543a-403f-94e8-338ea98ecfbb ==============================
+[0m11:57:04.971311 [info ] [MainThread]: Running with dbt=1.10.3
+[0m11:57:04.971660 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '..', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt deps --profiles-dir ..', 'send_anonymous_usage_stats': 'True'}
+[0m11:57:05.031770 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bfc4cac2-543a-403f-94e8-338ea98ecfbb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10665f470>]}
+[0m11:57:05.042028 [debug] [MainThread]: Set downloads directory='/var/folders/5k/t5t262f5239fl9vz4lyvw8l00000gn/T/dbt-downloads-mkvro295'
+[0m11:57:05.042275 [error] [MainThread]: Encountered an error:
+">=1.0" is not a valid semantic version.
+[0m11:57:05.044540 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 237, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 285, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 461, in deps
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/task/deps.py", line 215, in run
+    self.lock()
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/task/deps.py", line 187, in lock
+    resolved_deps = resolve_packages(packages, self.project, self.cli_vars)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 121, in resolve_packages
+    pending = PackageListing.from_contracts(packages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 91, in from_contracts
+    self.update_from(src)
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 83, in update_from
+    pkg = RegistryUnpinnedPackage.from_contract(contract)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/registry.py", line 83, in from_contract
+    versions = [semver.VersionSpecifier.from_version_string(v) for v in raw_version]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt_common/semver.py", line 99, in from_version_string
+    raise dbt_common.exceptions.base.SemverError(
+dbt_common.exceptions.base.SemverError: ">=1.0" is not a valid semantic version.
+
+[0m11:57:05.046142 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.12658554, "process_in_blocks": "0", "process_kernel_time": 0.09941, "process_mem_max_rss": "109608960", "process_out_blocks": "0", "process_user_time": 0.690448}
+[0m11:57:05.046430 [debug] [MainThread]: Command `dbt deps` failed at 11:57:05.046384 after 0.13 seconds
+[0m11:57:05.046646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1045cf290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c63020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108839220>]}
+[0m11:57:05.046879 [debug] [MainThread]: Flushing usage events
+[0m11:57:05.405514 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:58:09.956594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105854770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062fd8b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062fd250>]}
+
+
+============================== 11:58:09.960137 | cc56f8f2-de50-4260-80f2-9333fe2ffeea ==============================
+[0m11:58:09.960137 [info ] [MainThread]: Running with dbt=1.10.3
+[0m11:58:09.960641 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '..', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt deps --profiles-dir ..', 'send_anonymous_usage_stats': 'True'}
+[0m11:58:10.028221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cc56f8f2-de50-4260-80f2-9333fe2ffeea', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051fd760>]}
+[0m11:58:10.039281 [debug] [MainThread]: Set downloads directory='/var/folders/5k/t5t262f5239fl9vz4lyvw8l00000gn/T/dbt-downloads-es38azcd'
+[0m11:58:10.039558 [error] [MainThread]: Encountered an error:
+">=1.1.1, <2.0.0" is not a valid semantic version.
+[0m11:58:10.041990 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 237, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 285, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 461, in deps
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/task/deps.py", line 215, in run
+    self.lock()
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/task/deps.py", line 187, in lock
+    resolved_deps = resolve_packages(packages, self.project, self.cli_vars)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 121, in resolve_packages
+    pending = PackageListing.from_contracts(packages)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 91, in from_contracts
+    self.update_from(src)
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 83, in update_from
+    pkg = RegistryUnpinnedPackage.from_contract(contract)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/registry.py", line 83, in from_contract
+    versions = [semver.VersionSpecifier.from_version_string(v) for v in raw_version]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt_common/semver.py", line 99, in from_version_string
+    raise dbt_common.exceptions.base.SemverError(
+dbt_common.exceptions.base.SemverError: ">=1.1.1, <2.0.0" is not a valid semantic version.
+
+[0m11:58:10.043874 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.13108195, "process_in_blocks": "0", "process_kernel_time": 0.116139, "process_mem_max_rss": "109592576", "process_out_blocks": "0", "process_user_time": 0.727964}
+[0m11:58:10.044196 [debug] [MainThread]: Command `dbt deps` failed at 11:58:10.044142 after 0.13 seconds
+[0m11:58:10.044440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062fd520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103357320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10639e630>]}
+[0m11:58:10.044662 [debug] [MainThread]: Flushing usage events
+[0m11:58:10.427369 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:58:55.469527 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076be1e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1380f5970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1380f5340>]}
+
+
+============================== 11:58:55.472762 | f02abaf5-1d65-42f5-9cbb-d27a9b575b5b ==============================
+[0m11:58:55.472762 [info ] [MainThread]: Running with dbt=1.10.3
+[0m11:58:55.473156 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'profiles_dir': '..', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt deps --profiles-dir ..', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m11:58:55.633208 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f02abaf5-1d65-42f5-9cbb-d27a9b575b5b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c53260>]}
+[0m11:58:55.645669 [debug] [MainThread]: Set downloads directory='/var/folders/5k/t5t262f5239fl9vz4lyvw8l00000gn/T/dbt-downloads-580luvi6'
+[0m11:58:55.646073 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m11:58:55.746039 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m11:58:55.747231 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m11:58:55.808074 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m11:58:55.813547 [error] [MainThread]: Encountered an error:
+Could not find a matching compatible version for package dbt-labs/dbt_utils
+  Requested range: >=1.4.0, <2.0.0
+  Compatible versions: ['0.0.1', '0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.1.4', '0.1.5', '0.1.6', '0.1.7', '0.1.8', '0.1.9', '0.1.10', '0.1.11', '0.1.12', '0.1.13', '0.1.14', '0.1.15', '0.1.16', '0.1.17', '0.1.18', '0.1.19', '0.1.20', '0.1.21', '0.1.22', '0.1.23', '0.1.24', '0.1.25', '0.2.0', '0.2.1', '0.2.2', '0.2.3', '0.2.4', '0.2.5', '0.3.0', '0.4.0', '0.4.1', '0.5.0', '0.8.0', '0.8.1', '0.8.2', '0.8.3', '0.8.4', '0.8.5', '0.8.6', '0.9.0', '0.9.1', '0.9.2', '0.9.5', '0.9.6', '1.0.0', '1.1.0', '1.1.1', '1.2.0', '1.3.0']
+
+  Not shown: package versions incompatible with installed version of dbt-core
+  To include them, run 'dbt --no-version-check deps'
+[0m11:58:55.816972 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 237, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 285, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 461, in deps
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/task/deps.py", line 215, in run
+    self.lock()
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/task/deps.py", line 187, in lock
+    resolved_deps = resolve_packages(packages, self.project, self.cli_vars)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/resolver.py", line 131, in resolve_packages
+    target = final[package].resolved().fetch_metadata(project, renderer)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/dbt/deps/registry.py", line 124, in resolved
+    raise PackageVersionNotFoundError(
+dbt.exceptions.PackageVersionNotFoundError: Could not find a matching compatible version for package dbt-labs/dbt_utils
+  Requested range: >=1.4.0, <2.0.0
+  Compatible versions: ['0.0.1', '0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.1.4', '0.1.5', '0.1.6', '0.1.7', '0.1.8', '0.1.9', '0.1.10', '0.1.11', '0.1.12', '0.1.13', '0.1.14', '0.1.15', '0.1.16', '0.1.17', '0.1.18', '0.1.19', '0.1.20', '0.1.21', '0.1.22', '0.1.23', '0.1.24', '0.1.25', '0.2.0', '0.2.1', '0.2.2', '0.2.3', '0.2.4', '0.2.5', '0.3.0', '0.4.0', '0.4.1', '0.5.0', '0.8.0', '0.8.1', '0.8.2', '0.8.3', '0.8.4', '0.8.5', '0.8.6', '0.9.0', '0.9.1', '0.9.2', '0.9.5', '0.9.6', '1.0.0', '1.1.0', '1.1.1', '1.2.0', '1.3.0']
+
+  Not shown: package versions incompatible with installed version of dbt-core
+  To include them, run 'dbt --no-version-check deps'
+
+[0m11:58:55.819783 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.39463574, "process_in_blocks": "0", "process_kernel_time": 0.17615, "process_mem_max_rss": "110133248", "process_out_blocks": "0", "process_user_time": 1.028869}
+[0m11:58:55.821195 [debug] [MainThread]: Command `dbt deps` failed at 11:58:55.820897 after 0.40 seconds
+[0m11:58:55.821908 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102cb7290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x138157710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1381aa8d0>]}
+[0m11:58:55.822563 [debug] [MainThread]: Flushing usage events
+[0m11:58:56.231263 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:00:17.779277 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103942cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107bf5880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107bf51f0>]}
+
+
+============================== 12:00:17.782105 | aa9dd808-2980-486a-9f10-483f6de0f92e ==============================
+[0m12:00:17.782105 [info ] [MainThread]: Running with dbt=1.10.3
+[0m12:00:17.782451 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt deps --profiles-dir ..', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:00:17.845139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'aa9dd808-2980-486a-9f10-483f6de0f92e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ca7fb0>]}
+[0m12:00:17.857118 [debug] [MainThread]: Set downloads directory='/var/folders/5k/t5t262f5239fl9vz4lyvw8l00000gn/T/dbt-downloads-kvwluki3'
+[0m12:00:17.857534 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m12:00:17.948281 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m12:00:17.948770 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m12:00:18.004040 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m12:00:18.010993 [info ] [MainThread]: Updating lock file in file path: /Users/samydoreau/global-assignment/dbt/package-lock.yml
+[0m12:00:18.012077 [debug] [MainThread]: Set downloads directory='/var/folders/5k/t5t262f5239fl9vz4lyvw8l00000gn/T/dbt-downloads-8nt4vfgv'
+[0m12:00:18.013444 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m12:00:18.242220 [info ] [MainThread]: Installed from version 1.3.0
+[0m12:00:18.242533 [info ] [MainThread]: Up to date!
+[0m12:00:18.242765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'aa9dd808-2980-486a-9f10-483f6de0f92e', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10796ab40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ee6210>]}
+[0m12:00:18.244618 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.50614214, "process_in_blocks": "0", "process_kernel_time": 0.137898, "process_mem_max_rss": "111919104", "process_out_blocks": "0", "process_user_time": 0.742044}
+[0m12:00:18.244951 [debug] [MainThread]: Command `dbt deps` succeeded at 12:00:18.244894 after 0.51 seconds
+[0m12:00:18.245172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107939760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103942cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103b23500>]}
+[0m12:00:18.245379 [debug] [MainThread]: Flushing usage events
+[0m12:00:18.641005 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:00:20.642558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ccc260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109df5b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109df54c0>]}
+
+
+============================== 12:00:20.646214 | a0ac8e94-14d7-4439-9a71-956789f2f04f ==============================
+[0m12:00:20.646214 [info ] [MainThread]: Running with dbt=1.10.3
+[0m12:00:20.646763 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt seed --profiles-dir ..', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:00:20.889453 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a0ac8e94-14d7-4439-9a71-956789f2f04f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a0ed640>]}
+[0m12:00:20.932330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a0ac8e94-14d7-4439-9a71-956789f2f04f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c34ad0>]}
+[0m12:00:20.933392 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m12:00:21.047726 [debug] [MainThread]: checksum: 1bfacb87e6914c9942cfa2c4badfc1df19d859fe8ec086286ef238a7d920f97b, vars: {}, profile: , target: , version: 1.10.3
+[0m12:00:21.048547 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m12:00:21.049392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a0ac8e94-14d7-4439-9a71-956789f2f04f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1092ee570>]}
+[0m12:00:21.922031 [error] [MainThread]: Encountered an error:
+Compilation Error in model stg_user_events (models/staging/stg_user_events.sql)
+  unexpected char '"' at 431
+    line 18
+      "data ->> 'type'
+[0m12:00:21.925249 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": false, "command_wall_clock_time": 1.3352959, "process_in_blocks": "0", "process_kernel_time": 0.255585, "process_mem_max_rss": "110329856", "process_out_blocks": "0", "process_user_time": 2.028181}
+[0m12:00:21.926272 [debug] [MainThread]: Command `dbt seed` failed at 12:00:21.926098 after 1.34 seconds
+[0m12:00:21.927348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ccc260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a9f0d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aa5f0b0>]}
+[0m12:00:21.928585 [debug] [MainThread]: Flushing usage events
+[0m12:00:22.439434 [debug] [MainThread]: An error was encountered while trying to flush usage events

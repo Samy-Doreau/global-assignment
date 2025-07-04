@@ -1,0 +1,9 @@
+name: podcast_analytics
+version: "1.0"
+config-version: 2
+profile: podcast_analytics
+model-paths: ["models"]
+seed-paths: ["../seeds"]
+models:
+  podcast_analytics:
+    +materialized: view

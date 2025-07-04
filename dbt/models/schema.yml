@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw
+    tables:
+      - name: event_files
+        identifier: raw_event_files
+      - name: users
+      - name: episodes
+
+models:
+  - name: stg_user_events
+    description: "Typed raw event records"
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: event_type
+        tests:
+          - accepted_values:
+              values: ["play", "pause", "seek", "complete"]
+
+  - name: stg_users
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_episodes
+    columns:
+      - name: episode_id
+        tests:
+          - unique
+          - not_null
