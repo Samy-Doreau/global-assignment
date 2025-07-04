@@ -79,3 +79,9 @@ Materialisations are `view` by default; switch to `table`/`incremental` once vol
 ---
 
 Continue reading the inline comments in each SQL model for deeper context.
+
+### Why derive sessions?
+
+The assignment calls for metrics such as **average session duration per user** – a classic streaming‐app KPI. A _session_ groups consecutive events separated by no more than 30 minutes of inactivity. Computing this in an **intermediate** model keeps the heavy window-function logic out of the thin marts and makes the session table reusable by multiple downstream marts (e.g. churn analysis, retention curves).
+
+Even if a stakeholder only asked for _top completed episodes_ today, surfacing `int_user_sessions` future-proofs the model; new questions about "time spent listening" can be answered without rewriting raw logic.

@@ -221,3 +221,7 @@ Limitations that would be solved in production (described in the next section):
 - No SCD type-2 snapshots for dimensions (outlined but not implemented).
 
 ---
+
+- **Dimensional marts** – `dim_users` and `dim_episodes` are materialised as tables in `3.marts` to ensure downstream BI tools are able toi query the data fast; fact models join to stable dimensions, supporting Kimball-style star-schema queries.
+
+---
