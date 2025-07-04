@@ -11,7 +11,7 @@
 | Scalability                 | Partitioned S3 buckets (`raw_events/yyyymmdd/`), Kinesis scaling, Snowflake warehouses scale-out; dbt incremental + streams/tasks   |
 | Testing strategy            | dbt tests: `not_null`, `unique`, `accepted_values`, bespoke DQ counts; CI step fails PR on test errors                              |
 | Reusability                 | Parameterised Terraform modules; dbt macros (`generate_surrogate_key`, session logic)                                               |
-| Documentation               | dbt docs site + ERD (`make erd`) – lineage graph; markdown in repo                                                                  |
+| Documentation               | dbt docs site – lineage graph; markdown in repo                                                                                     |
 | Onboarding                  | One-line `make pipeline` for end-to-end run; detailed READMEs per folder                                                            |
 | Governance                  | GitHub Actions audit trail; Snowflake access roles; dbt artefacts stored for 30 days                                                |
 

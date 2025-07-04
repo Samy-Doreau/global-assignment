@@ -17,15 +17,17 @@ load-data: ## Load events JSONL into Postgres (usage: make load-data FILE=event_
 	python3 scripts/load_events_to_postgres.py --file $(FILE)
 
 dbt-debug: ## Debug dbt connection
-	cd dbt && dbt debug --profiles-dir ..
+	cd dbt && dbt debug --profiles-dir $(PWD)
 
-dbt: ## Run dbt clean, deps, seed, run, test
+dbt: ## Run dbt deps, seed, run, test
 	cd dbt && \
-	dbt clean && \
-	dbt deps --profiles-dir .. && \
-	dbt seed --profiles-dir .. && \
-	dbt run --profiles-dir .. && \
-	dbt test --profiles-dir ..
+	dbt deps --profiles-dir $(PWD) && \
+	dbt seed --profiles-dir $(PWD) && \
+	dbt run --profiles-dir $(PWD) && \
+	dbt test --profiles-dir $(PWD)
+
+erd: ## Generate ERD SVG in docs/ (requires: pip install dbterd)
+	cd dbt && dbt docs generate && dbterd run -ad . --output ../docs/erd.svg
 
 pipeline: ## Run full pipeline (truncate->seed->load->dbt->export)
 	python3 scripts/pipeline.py --events $(FILE) 
