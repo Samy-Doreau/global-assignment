@@ -20905,3 +20905,1416 @@ with relation as (
 [0m14:30:44.381655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107b33ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a8b3dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a8b34d0>]}
 [0m14:30:44.381978 [debug] [MainThread]: Flushing usage events
 [0m14:30:44.765239 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:30:26.959678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046a61b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cd1b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cd1520>]}
+
+
+============================== 15:30:26.963188 | d3d78220-d025-4750-a6fc-584c143dd0c9 ==============================
+[0m15:30:26.963188 [info ] [MainThread]: Running with dbt=1.10.3
+[0m15:30:26.963611 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'version_check': 'True', 'profiles_dir': '..', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt seed --profiles-dir ..', 'send_anonymous_usage_stats': 'True'}
+[0m15:30:27.069698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd3d78220-d025-4750-a6fc-584c143dd0c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1060584d0>]}
+[0m15:30:27.098279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd3d78220-d025-4750-a6fc-584c143dd0c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10720bf50>]}
+[0m15:30:27.099099 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:30:27.164495 [debug] [MainThread]: checksum: 1bfacb87e6914c9942cfa2c4badfc1df19d859fe8ec086286ef238a7d920f97b, vars: {}, profile: , target: , version: 1.10.3
+[0m15:30:27.253827 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:30:27.254171 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:30:27.283735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd3d78220-d025-4750-a6fc-584c143dd0c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107461b80>]}
+[0m15:30:27.332739 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/samydoreau/global-assignment/dbt/target/manifest.json
+[0m15:30:27.334248 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/samydoreau/global-assignment/dbt/target/semantic_manifest.json
+[0m15:30:27.348149 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd3d78220-d025-4750-a6fc-584c143dd0c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107460410>]}
+[0m15:30:27.348512 [info ] [MainThread]: Found 7 models, 2 seeds, 8 data tests, 3 sources, 549 macros
+[0m15:30:27.348744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd3d78220-d025-4750-a6fc-584c143dd0c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074c9c10>]}
+[0m15:30:27.349792 [info ] [MainThread]: 
+[0m15:30:27.350024 [info ] [MainThread]: Concurrency: 4 threads (target='local')
+[0m15:30:27.350200 [info ] [MainThread]: 
+[0m15:30:27.350512 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:30:27.352431 [debug] [ThreadPool]: Acquiring new postgres connection 'list_podcast_analytics'
+[0m15:30:27.389184 [debug] [ThreadPool]: Using postgres connection "list_podcast_analytics"
+[0m15:30:27.389543 [debug] [ThreadPool]: On list_podcast_analytics: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "connection_name": "list_podcast_analytics"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:30:27.389758 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:30:27.423288 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.033 seconds
+[0m15:30:27.424280 [debug] [ThreadPool]: On list_podcast_analytics: Close
+[0m15:30:27.425254 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_podcast_analytics, now list_podcast_analytics_public)
+[0m15:30:27.428688 [debug] [ThreadPool]: Using postgres connection "list_podcast_analytics_public"
+[0m15:30:27.428944 [debug] [ThreadPool]: On list_podcast_analytics_public: BEGIN
+[0m15:30:27.429138 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:30:27.439754 [debug] [ThreadPool]: SQL status: BEGIN in 0.011 seconds
+[0m15:30:27.440018 [debug] [ThreadPool]: Using postgres connection "list_podcast_analytics_public"
+[0m15:30:27.440219 [debug] [ThreadPool]: On list_podcast_analytics_public: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "connection_name": "list_podcast_analytics_public"} */
+select
+      'podcast_analytics' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'podcast_analytics' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'podcast_analytics' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m15:30:27.447682 [debug] [ThreadPool]: SQL status: SELECT 10 in 0.007 seconds
+[0m15:30:27.448563 [debug] [ThreadPool]: On list_podcast_analytics_public: ROLLBACK
+[0m15:30:27.449078 [debug] [ThreadPool]: On list_podcast_analytics_public: Close
+[0m15:30:27.452433 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:27.452657 [debug] [MainThread]: On master: BEGIN
+[0m15:30:27.452837 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:30:27.461527 [debug] [MainThread]: SQL status: BEGIN in 0.009 seconds
+[0m15:30:27.461874 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:27.462151 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m15:30:27.468753 [debug] [MainThread]: SQL status: SELECT 7 in 0.006 seconds
+[0m15:30:27.470224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd3d78220-d025-4750-a6fc-584c143dd0c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1072a0560>]}
+[0m15:30:27.470596 [debug] [MainThread]: On master: ROLLBACK
+[0m15:30:27.471381 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:27.471604 [debug] [MainThread]: On master: BEGIN
+[0m15:30:27.472320 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m15:30:27.472560 [debug] [MainThread]: On master: COMMIT
+[0m15:30:27.472759 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:27.472941 [debug] [MainThread]: On master: COMMIT
+[0m15:30:27.473352 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:30:27.473541 [debug] [MainThread]: On master: Close
+[0m15:30:27.475849 [debug] [Thread-1 (]: Began running node seed.podcast_analytics.raw_episodes
+[0m15:30:27.476127 [debug] [Thread-2 (]: Began running node seed.podcast_analytics.raw_users
+[0m15:30:27.476494 [info ] [Thread-1 (]: 1 of 2 START seed file public.raw_episodes ..................................... [RUN]
+[0m15:30:27.477239 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_podcast_analytics_public, now seed.podcast_analytics.raw_episodes)
+[0m15:30:27.476897 [info ] [Thread-2 (]: 2 of 2 START seed file public.raw_users ........................................ [RUN]
+[0m15:30:27.477545 [debug] [Thread-1 (]: Began compiling node seed.podcast_analytics.raw_episodes
+[0m15:30:27.477836 [debug] [Thread-2 (]: Acquiring new postgres connection 'seed.podcast_analytics.raw_users'
+[0m15:30:27.478076 [debug] [Thread-1 (]: Began executing node seed.podcast_analytics.raw_episodes
+[0m15:30:27.478290 [debug] [Thread-2 (]: Began compiling node seed.podcast_analytics.raw_users
+[0m15:30:27.488875 [debug] [Thread-2 (]: Began executing node seed.podcast_analytics.raw_users
+[0m15:30:27.498351 [debug] [Thread-1 (]: Using postgres connection "seed.podcast_analytics.raw_episodes"
+[0m15:30:27.500511 [debug] [Thread-2 (]: Using postgres connection "seed.podcast_analytics.raw_users"
+[0m15:30:27.500742 [debug] [Thread-1 (]: On seed.podcast_analytics.raw_episodes: BEGIN
+[0m15:30:27.500969 [debug] [Thread-2 (]: On seed.podcast_analytics.raw_users: BEGIN
+[0m15:30:27.501194 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:30:27.501400 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:30:27.510669 [debug] [Thread-2 (]: SQL status: BEGIN in 0.009 seconds
+[0m15:30:27.511015 [debug] [Thread-2 (]: Using postgres connection "seed.podcast_analytics.raw_users"
+[0m15:30:27.511243 [debug] [Thread-2 (]: On seed.podcast_analytics.raw_users: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "seed.podcast_analytics.raw_users"} */
+truncate table "podcast_analytics"."public"."raw_users"
+[0m15:30:27.512113 [debug] [Thread-1 (]: SQL status: BEGIN in 0.011 seconds
+[0m15:30:27.512348 [debug] [Thread-1 (]: Using postgres connection "seed.podcast_analytics.raw_episodes"
+[0m15:30:27.512567 [debug] [Thread-1 (]: On seed.podcast_analytics.raw_episodes: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "seed.podcast_analytics.raw_episodes"} */
+truncate table "podcast_analytics"."public"."raw_episodes"
+[0m15:30:27.520628 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.008 seconds
+[0m15:30:27.527543 [debug] [Thread-2 (]: SQL status: TRUNCATE TABLE in 0.016 seconds
+[0m15:30:27.580240 [debug] [Thread-1 (]: Using postgres connection "seed.podcast_analytics.raw_episodes"
+[0m15:30:27.597032 [debug] [Thread-2 (]: Using postgres connection "seed.podcast_analytics.raw_users"
+[0m15:30:27.597348 [debug] [Thread-1 (]: On seed.podcast_analytics.raw_episodes: 
+          insert into "podcast_analytics"."public"."raw_episodes" ("episode_id", "podcast_id", "title", "release_date", "duration_seconds") values
+          (%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s),(%s,%s,%s,%s,%...
+[0m15:30:27.597656 [debug] [Thread-2 (]: On seed.podcast_analytics.raw_users: 
+          insert into "podcast_analytics"."public"."raw_users" ("user_id", "signup_date", "country") values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%...
+[0m15:30:27.601505 [debug] [Thread-1 (]: SQL status: INSERT 0 50 in 0.004 seconds
+[0m15:30:27.605196 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.podcast_analytics.raw_episodes"
+[0m15:30:27.605493 [debug] [Thread-2 (]: SQL status: INSERT 0 100 in 0.007 seconds
+[0m15:30:27.606114 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.podcast_analytics.raw_users"
+[0m15:30:27.615184 [debug] [Thread-2 (]: On seed.podcast_analytics.raw_users: COMMIT
+[0m15:30:27.616858 [debug] [Thread-1 (]: On seed.podcast_analytics.raw_episodes: COMMIT
+[0m15:30:27.617117 [debug] [Thread-2 (]: Using postgres connection "seed.podcast_analytics.raw_users"
+[0m15:30:27.617352 [debug] [Thread-1 (]: Using postgres connection "seed.podcast_analytics.raw_episodes"
+[0m15:30:27.617569 [debug] [Thread-2 (]: On seed.podcast_analytics.raw_users: COMMIT
+[0m15:30:27.617774 [debug] [Thread-1 (]: On seed.podcast_analytics.raw_episodes: COMMIT
+[0m15:30:27.620868 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m15:30:27.621144 [debug] [Thread-2 (]: SQL status: COMMIT in 0.003 seconds
+[0m15:30:27.622236 [debug] [Thread-1 (]: On seed.podcast_analytics.raw_episodes: Close
+[0m15:30:27.622676 [debug] [Thread-2 (]: On seed.podcast_analytics.raw_users: Close
+[0m15:30:27.623884 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd3d78220-d025-4750-a6fc-584c143dd0c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105fa4bc0>]}
+[0m15:30:27.624109 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd3d78220-d025-4750-a6fc-584c143dd0c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111450e60>]}
+[0m15:30:27.624442 [info ] [Thread-1 (]: 1 of 2 OK loaded seed file public.raw_episodes ................................. [[32mINSERT 50[0m in 0.15s]
+[0m15:30:27.624781 [info ] [Thread-2 (]: 2 of 2 OK loaded seed file public.raw_users .................................... [[32mINSERT 100[0m in 0.15s]
+[0m15:30:27.625129 [debug] [Thread-1 (]: Finished running node seed.podcast_analytics.raw_episodes
+[0m15:30:27.625432 [debug] [Thread-2 (]: Finished running node seed.podcast_analytics.raw_users
+[0m15:30:27.626200 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:27.626428 [debug] [MainThread]: On master: BEGIN
+[0m15:30:27.626622 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:30:27.636533 [debug] [MainThread]: SQL status: BEGIN in 0.010 seconds
+[0m15:30:27.637109 [debug] [MainThread]: On master: COMMIT
+[0m15:30:27.637328 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:27.637520 [debug] [MainThread]: On master: COMMIT
+[0m15:30:27.638606 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m15:30:27.638908 [debug] [MainThread]: On master: Close
+[0m15:30:27.639195 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:30:27.639387 [debug] [MainThread]: Connection 'seed.podcast_analytics.raw_episodes' was properly closed.
+[0m15:30:27.639564 [debug] [MainThread]: Connection 'seed.podcast_analytics.raw_users' was properly closed.
+[0m15:30:27.639776 [info ] [MainThread]: 
+[0m15:30:27.639992 [info ] [MainThread]: Finished running 2 seeds in 0 hours 0 minutes and 0.29 seconds (0.29s).
+[0m15:30:27.640446 [debug] [MainThread]: Command end result
+[0m15:30:27.694703 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/samydoreau/global-assignment/dbt/target/manifest.json
+[0m15:30:27.696165 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/samydoreau/global-assignment/dbt/target/semantic_manifest.json
+[0m15:30:27.699283 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/samydoreau/global-assignment/dbt/target/run_results.json
+[0m15:30:27.699515 [info ] [MainThread]: 
+[0m15:30:27.699810 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:30:27.700036 [info ] [MainThread]: 
+[0m15:30:27.700260 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m15:30:27.703416 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 0.84582156, "process_in_blocks": "0", "process_kernel_time": 0.194618, "process_mem_max_rss": "129646592", "process_out_blocks": "0", "process_user_time": 1.273294}
+[0m15:30:27.704456 [debug] [MainThread]: Command `dbt seed` succeeded at 15:30:27.704298 after 0.85 seconds
+[0m15:30:27.705468 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11141b410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11141a2a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11141b500>]}
+[0m15:30:27.706660 [debug] [MainThread]: Flushing usage events
+[0m15:30:28.113052 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:30:29.191765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104a3b650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105071bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105071550>]}
+
+
+============================== 15:30:29.194098 | 6c489ffb-d718-4bb6-9c03-0d3d4e6116bc ==============================
+[0m15:30:29.194098 [info ] [MainThread]: Running with dbt=1.10.3
+[0m15:30:29.194460 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '..', 'debug': 'False', 'warn_error': 'None', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt deps --profiles-dir ..', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:30:29.250309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6c489ffb-d718-4bb6-9c03-0d3d4e6116bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e36c30>]}
+[0m15:30:29.282401 [debug] [MainThread]: Set downloads directory='/var/folders/5k/t5t262f5239fl9vz4lyvw8l00000gn/T/dbt-downloads-hdu61k5v'
+[0m15:30:29.282798 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:30:29.395346 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m15:30:29.396050 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m15:30:29.450844 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m15:30:29.461573 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m15:30:29.813217 [info ] [MainThread]: Installed from version 1.3.0
+[0m15:30:29.813691 [info ] [MainThread]: Up to date!
+[0m15:30:29.814033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '6c489ffb-d718-4bb6-9c03-0d3d4e6116bc', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105184ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1043a40e0>]}
+[0m15:30:29.816436 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.65822476, "process_in_blocks": "0", "process_kernel_time": 0.136747, "process_mem_max_rss": "111738880", "process_out_blocks": "0", "process_user_time": 0.76759}
+[0m15:30:29.816887 [debug] [MainThread]: Command `dbt deps` succeeded at 15:30:29.816811 after 0.66 seconds
+[0m15:30:29.817194 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105071970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10487a270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051baf60>]}
+[0m15:30:29.817471 [debug] [MainThread]: Flushing usage events
+[0m15:30:30.195417 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:30:31.326622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11918c170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119af9d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119af9640>]}
+
+
+============================== 15:30:31.329006 | 066f942d-923a-4f25-8899-f620c7981015 ==============================
+[0m15:30:31.329006 [info ] [MainThread]: Running with dbt=1.10.3
+[0m15:30:31.329371 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '..', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir ..', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:30:31.422334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11a99bf50>]}
+[0m15:30:31.452433 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118f3b260>]}
+[0m15:30:31.453035 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:30:31.516903 [debug] [MainThread]: checksum: 1bfacb87e6914c9942cfa2c4badfc1df19d859fe8ec086286ef238a7d920f97b, vars: {}, profile: , target: , version: 1.10.3
+[0m15:30:31.593008 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:30:31.593372 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:30:31.622487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b2a3e30>]}
+[0m15:30:31.676441 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/samydoreau/global-assignment/dbt/target/manifest.json
+[0m15:30:31.677867 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/samydoreau/global-assignment/dbt/target/semantic_manifest.json
+[0m15:30:31.686266 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b0bcc50>]}
+[0m15:30:31.686618 [info ] [MainThread]: Found 7 models, 2 seeds, 8 data tests, 3 sources, 549 macros
+[0m15:30:31.686852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11aaa14f0>]}
+[0m15:30:31.688020 [info ] [MainThread]: 
+[0m15:30:31.688265 [info ] [MainThread]: Concurrency: 4 threads (target='local')
+[0m15:30:31.688457 [info ] [MainThread]: 
+[0m15:30:31.688774 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:30:31.691037 [debug] [ThreadPool]: Acquiring new postgres connection 'list_podcast_analytics'
+[0m15:30:31.722053 [debug] [ThreadPool]: Using postgres connection "list_podcast_analytics"
+[0m15:30:31.722519 [debug] [ThreadPool]: On list_podcast_analytics: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "connection_name": "list_podcast_analytics"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:30:31.722780 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:30:31.759805 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.037 seconds
+[0m15:30:31.760769 [debug] [ThreadPool]: On list_podcast_analytics: Close
+[0m15:30:31.761878 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_podcast_analytics, now list_podcast_analytics_public)
+[0m15:30:31.765486 [debug] [ThreadPool]: Using postgres connection "list_podcast_analytics_public"
+[0m15:30:31.765780 [debug] [ThreadPool]: On list_podcast_analytics_public: BEGIN
+[0m15:30:31.765966 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:30:31.772818 [debug] [ThreadPool]: SQL status: BEGIN in 0.007 seconds
+[0m15:30:31.773174 [debug] [ThreadPool]: Using postgres connection "list_podcast_analytics_public"
+[0m15:30:31.773547 [debug] [ThreadPool]: On list_podcast_analytics_public: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "connection_name": "list_podcast_analytics_public"} */
+select
+      'podcast_analytics' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'podcast_analytics' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'podcast_analytics' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m15:30:31.777068 [debug] [ThreadPool]: SQL status: SELECT 10 in 0.003 seconds
+[0m15:30:31.777961 [debug] [ThreadPool]: On list_podcast_analytics_public: ROLLBACK
+[0m15:30:31.778421 [debug] [ThreadPool]: On list_podcast_analytics_public: Close
+[0m15:30:31.782090 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:31.782406 [debug] [MainThread]: On master: BEGIN
+[0m15:30:31.782601 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:30:31.789980 [debug] [MainThread]: SQL status: BEGIN in 0.007 seconds
+[0m15:30:31.790223 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:31.790479 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m15:30:31.793897 [debug] [MainThread]: SQL status: SELECT 7 in 0.003 seconds
+[0m15:30:31.795260 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b690c80>]}
+[0m15:30:31.795557 [debug] [MainThread]: On master: ROLLBACK
+[0m15:30:31.795981 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:31.796166 [debug] [MainThread]: On master: BEGIN
+[0m15:30:31.796711 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m15:30:31.796923 [debug] [MainThread]: On master: COMMIT
+[0m15:30:31.797115 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:31.797295 [debug] [MainThread]: On master: COMMIT
+[0m15:30:31.797708 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:30:31.797898 [debug] [MainThread]: On master: Close
+[0m15:30:31.799421 [debug] [Thread-1 (]: Began running node model.podcast_analytics.stg_episodes
+[0m15:30:31.799677 [debug] [Thread-2 (]: Began running node model.podcast_analytics.stg_user_events
+[0m15:30:31.800194 [debug] [Thread-3 (]: Began running node model.podcast_analytics.stg_user_events_invalid
+[0m15:30:31.799995 [info ] [Thread-1 (]: 1 of 7 START sql view model public.stg_episodes ................................ [RUN]
+[0m15:30:31.800482 [debug] [Thread-4 (]: Began running node model.podcast_analytics.stg_users
+[0m15:30:31.800756 [info ] [Thread-2 (]: 2 of 7 START sql view model public.stg_user_events ............................. [RUN]
+[0m15:30:31.801038 [info ] [Thread-3 (]: 3 of 7 START sql view model public.stg_user_events_invalid ..................... [RUN]
+[0m15:30:31.801311 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_podcast_analytics_public, now model.podcast_analytics.stg_episodes)
+[0m15:30:31.801589 [info ] [Thread-4 (]: 4 of 7 START sql view model public.stg_users ................................... [RUN]
+[0m15:30:31.801883 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.podcast_analytics.stg_user_events'
+[0m15:30:31.802154 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.podcast_analytics.stg_user_events_invalid'
+[0m15:30:31.802373 [debug] [Thread-1 (]: Began compiling node model.podcast_analytics.stg_episodes
+[0m15:30:31.802624 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.podcast_analytics.stg_users'
+[0m15:30:31.802839 [debug] [Thread-2 (]: Began compiling node model.podcast_analytics.stg_user_events
+[0m15:30:31.803062 [debug] [Thread-3 (]: Began compiling node model.podcast_analytics.stg_user_events_invalid
+[0m15:30:31.808084 [debug] [Thread-1 (]: Writing injected SQL for node "model.podcast_analytics.stg_episodes"
+[0m15:30:31.808619 [debug] [Thread-4 (]: Began compiling node model.podcast_analytics.stg_users
+[0m15:30:31.817900 [debug] [Thread-2 (]: Writing injected SQL for node "model.podcast_analytics.stg_user_events"
+[0m15:30:31.819603 [debug] [Thread-3 (]: Writing injected SQL for node "model.podcast_analytics.stg_user_events_invalid"
+[0m15:30:31.821373 [debug] [Thread-4 (]: Writing injected SQL for node "model.podcast_analytics.stg_users"
+[0m15:30:31.821781 [debug] [Thread-1 (]: Began executing node model.podcast_analytics.stg_episodes
+[0m15:30:31.822511 [debug] [Thread-2 (]: Began executing node model.podcast_analytics.stg_user_events
+[0m15:30:31.823167 [debug] [Thread-4 (]: Began executing node model.podcast_analytics.stg_users
+[0m15:30:31.823724 [debug] [Thread-3 (]: Began executing node model.podcast_analytics.stg_user_events_invalid
+[0m15:30:31.845731 [debug] [Thread-1 (]: Writing runtime sql for node "model.podcast_analytics.stg_episodes"
+[0m15:30:31.849498 [debug] [Thread-2 (]: Writing runtime sql for node "model.podcast_analytics.stg_user_events"
+[0m15:30:31.851747 [debug] [Thread-4 (]: Writing runtime sql for node "model.podcast_analytics.stg_users"
+[0m15:30:31.855709 [debug] [Thread-3 (]: Writing runtime sql for node "model.podcast_analytics.stg_user_events_invalid"
+[0m15:30:31.856634 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.stg_user_events"
+[0m15:30:31.857005 [debug] [Thread-2 (]: On model.podcast_analytics.stg_user_events: BEGIN
+[0m15:30:31.857281 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.stg_episodes"
+[0m15:30:31.857538 [debug] [Thread-4 (]: Using postgres connection "model.podcast_analytics.stg_users"
+[0m15:30:31.857778 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.stg_user_events_invalid"
+[0m15:30:31.858054 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:30:31.858330 [debug] [Thread-1 (]: On model.podcast_analytics.stg_episodes: BEGIN
+[0m15:30:31.858572 [debug] [Thread-4 (]: On model.podcast_analytics.stg_users: BEGIN
+[0m15:30:31.858811 [debug] [Thread-3 (]: On model.podcast_analytics.stg_user_events_invalid: BEGIN
+[0m15:30:31.859115 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:30:31.859360 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:30:31.859603 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:30:31.870276 [debug] [Thread-2 (]: SQL status: BEGIN in 0.012 seconds
+[0m15:30:31.870575 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.stg_user_events"
+[0m15:30:31.870871 [debug] [Thread-2 (]: On model.podcast_analytics.stg_user_events: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_user_events"} */
+
+  create view "podcast_analytics"."public"."stg_user_events__dbt_tmp"
+    
+    
+  as (
+    -- stg_user_events.sql : typed raw event records from JSONB
+-- Note: Invalid events are captured in stg_user_events_invalid.sql for investigation
+with source as (
+    select data
+    from "podcast_analytics"."public"."raw_event_files"
+),
+
+valid_events as (
+    select * from source
+    where data ->> 'event_type' is not null
+      and data ->> 'event_type' in ('play', 'pause', 'seek', 'complete')
+      and data ->> 'timestamp' is not null
+      and data ->> 'timestamp' != ''
+      and data ->> 'user_id' is not null
+      and data ->> 'episode_id' is not null
+),
+
+typed as (
+    select
+        md5(cast(coalesce(cast(data ->> 'user_id' as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(data ->> 'episode_id' as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(data ->> 'timestamp' as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(data ->> 'event_type' as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as event_id,
+        data ->> 'user_id'      as user_id,
+        data ->> 'episode_id'   as episode_id,
+        case 
+            when (data ->> 'timestamp') ~ '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}' then (data ->> 'timestamp')::timestamp
+            else null
+        end as event_ts,
+        data ->> 'event_type'         as event_type,
+        (data ->> 'duration')::integer as duration
+    from valid_events
+    where (data ->> 'timestamp') ~ '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}'
+)
+select * from typed
+  );
+[0m15:30:31.871182 [debug] [Thread-1 (]: SQL status: BEGIN in 0.012 seconds
+[0m15:30:31.871461 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.stg_episodes"
+[0m15:30:31.871719 [debug] [Thread-1 (]: On model.podcast_analytics.stg_episodes: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_episodes"} */
+
+  create view "podcast_analytics"."public"."stg_episodes__dbt_tmp"
+    
+    
+  as (
+    -- stg_episodes.sql : clean episode reference data
+with source as (
+    select * from "podcast_analytics"."public"."raw_episodes"
+)
+select
+    cast(episode_id as text) as episode_id,
+    cast(podcast_id as text) as podcast_id,
+    title,
+    cast(release_date as date) as release_date,
+    cast(duration_seconds as integer) as duration_seconds
+from source
+  );
+[0m15:30:31.875397 [debug] [Thread-3 (]: SQL status: BEGIN in 0.016 seconds
+[0m15:30:31.875642 [debug] [Thread-4 (]: SQL status: BEGIN in 0.016 seconds
+[0m15:30:31.875891 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.stg_user_events_invalid"
+[0m15:30:31.876121 [debug] [Thread-4 (]: Using postgres connection "model.podcast_analytics.stg_users"
+[0m15:30:31.876417 [debug] [Thread-3 (]: On model.podcast_analytics.stg_user_events_invalid: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_user_events_invalid"} */
+
+  create view "podcast_analytics"."public"."stg_user_events_invalid__dbt_tmp"
+    
+    
+  as (
+    -- stg_user_events_invalid.sql : capture invalid event records for investigation
+with source as (
+    select data
+    from "podcast_analytics"."public"."raw_event_files"
+),
+
+invalid_events as (
+    select 
+        data,
+        data ->> 'user_id' as user_id,
+        data ->> 'episode_id' as episode_id,
+        data ->> 'timestamp' as timestamp,
+        data ->> 'event_type' as event_type,
+        data ->> 'duration' as duration,
+        case 
+            when data ->> 'event_type' is null then 'missing_event_type'
+            when data ->> 'event_type' not in ('play', 'pause', 'seek', 'complete') then 'invalid_event_type'
+            when data ->> 'timestamp' is null or data ->> 'timestamp' = '' then 'missing_timestamp'
+            when not ((data ->> 'timestamp') ~ '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}') then 'malformed_timestamp'
+            when data ->> 'user_id' is null then 'missing_user_id'
+            when data ->> 'episode_id' is null then 'missing_episode_id'
+            else 'other_issue'
+        end as issue_type
+    from source
+    where data ->> 'event_type' is null 
+       or data ->> 'event_type' not in ('play', 'pause', 'seek', 'complete')
+       or data ->> 'timestamp' is null 
+       or data ->> 'timestamp' = ''
+       or not ((data ->> 'timestamp') ~ '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}')
+       or data ->> 'user_id' is null
+       or data ->> 'episode_id' is null
+)
+
+select * from invalid_events
+  );
+[0m15:30:31.876724 [debug] [Thread-4 (]: On model.podcast_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_users"} */
+
+  create view "podcast_analytics"."public"."stg_users__dbt_tmp"
+    
+    
+  as (
+    -- stg_users.sql : clean user reference data
+with source as (
+    select * from "podcast_analytics"."public"."raw_users"
+)
+select
+    cast(user_id as text) as user_id,
+    cast(signup_date as date) as signup_date,
+    country
+from source
+  );
+[0m15:30:31.877705 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.006 seconds
+[0m15:30:31.881698 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.stg_episodes"
+[0m15:30:31.881956 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.011 seconds
+[0m15:30:31.882216 [debug] [Thread-4 (]: SQL status: CREATE VIEW in 0.005 seconds
+[0m15:30:31.882441 [debug] [Thread-1 (]: On model.podcast_analytics.stg_episodes: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_episodes"} */
+alter table "podcast_analytics"."public"."stg_episodes" rename to "stg_episodes__dbt_backup"
+[0m15:30:31.882656 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.006 seconds
+[0m15:30:31.884420 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.stg_user_events"
+[0m15:30:31.886053 [debug] [Thread-4 (]: Using postgres connection "model.podcast_analytics.stg_users"
+[0m15:30:31.887859 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.stg_user_events_invalid"
+[0m15:30:31.888088 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m15:30:31.888329 [debug] [Thread-2 (]: On model.podcast_analytics.stg_user_events: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_user_events"} */
+alter table "podcast_analytics"."public"."stg_user_events" rename to "stg_user_events__dbt_backup"
+[0m15:30:31.888571 [debug] [Thread-4 (]: On model.podcast_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_users"} */
+alter table "podcast_analytics"."public"."stg_users" rename to "stg_users__dbt_backup"
+[0m15:30:31.888816 [debug] [Thread-3 (]: On model.podcast_analytics.stg_user_events_invalid: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_user_events_invalid"} */
+alter table "podcast_analytics"."public"."stg_user_events_invalid" rename to "stg_user_events_invalid__dbt_backup"
+[0m15:30:31.890312 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.stg_episodes"
+[0m15:30:31.890682 [debug] [Thread-1 (]: On model.podcast_analytics.stg_episodes: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_episodes"} */
+alter table "podcast_analytics"."public"."stg_episodes__dbt_tmp" rename to "stg_episodes"
+[0m15:30:31.891430 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:30:31.891646 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:30:31.891849 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:30:31.892108 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:30:31.893590 [debug] [Thread-4 (]: Using postgres connection "model.podcast_analytics.stg_users"
+[0m15:30:31.895779 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.stg_user_events"
+[0m15:30:31.897233 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.stg_user_events_invalid"
+[0m15:30:31.906412 [debug] [Thread-1 (]: On model.podcast_analytics.stg_episodes: COMMIT
+[0m15:30:31.906723 [debug] [Thread-4 (]: On model.podcast_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_users"} */
+alter table "podcast_analytics"."public"."stg_users__dbt_tmp" rename to "stg_users"
+[0m15:30:31.906975 [debug] [Thread-2 (]: On model.podcast_analytics.stg_user_events: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_user_events"} */
+alter table "podcast_analytics"."public"."stg_user_events__dbt_tmp" rename to "stg_user_events"
+[0m15:30:31.907209 [debug] [Thread-3 (]: On model.podcast_analytics.stg_user_events_invalid: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_user_events_invalid"} */
+alter table "podcast_analytics"."public"."stg_user_events_invalid__dbt_tmp" rename to "stg_user_events_invalid"
+[0m15:30:31.907437 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.stg_episodes"
+[0m15:30:31.907762 [debug] [Thread-1 (]: On model.podcast_analytics.stg_episodes: COMMIT
+[0m15:30:31.909433 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m15:30:31.909661 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m15:30:31.910594 [debug] [Thread-3 (]: On model.podcast_analytics.stg_user_events_invalid: COMMIT
+[0m15:30:31.910797 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m15:30:31.910988 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m15:30:31.911921 [debug] [Thread-4 (]: On model.podcast_analytics.stg_users: COMMIT
+[0m15:30:31.912147 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.stg_user_events_invalid"
+[0m15:30:31.912981 [debug] [Thread-2 (]: On model.podcast_analytics.stg_user_events: COMMIT
+[0m15:30:31.916075 [debug] [Thread-1 (]: Applying DROP to: "podcast_analytics"."public"."stg_episodes__dbt_backup"
+[0m15:30:31.916304 [debug] [Thread-4 (]: Using postgres connection "model.podcast_analytics.stg_users"
+[0m15:30:31.916527 [debug] [Thread-3 (]: On model.podcast_analytics.stg_user_events_invalid: COMMIT
+[0m15:30:31.916737 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.stg_user_events"
+[0m15:30:31.919176 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.stg_episodes"
+[0m15:30:31.919399 [debug] [Thread-4 (]: On model.podcast_analytics.stg_users: COMMIT
+[0m15:30:31.919653 [debug] [Thread-2 (]: On model.podcast_analytics.stg_user_events: COMMIT
+[0m15:30:31.919911 [debug] [Thread-1 (]: On model.podcast_analytics.stg_episodes: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_episodes"} */
+drop view if exists "podcast_analytics"."public"."stg_episodes__dbt_backup" cascade
+[0m15:30:31.921884 [debug] [Thread-3 (]: SQL status: COMMIT in 0.002 seconds
+[0m15:30:31.923304 [debug] [Thread-3 (]: Applying DROP to: "podcast_analytics"."public"."stg_user_events_invalid__dbt_backup"
+[0m15:30:31.923539 [debug] [Thread-4 (]: SQL status: COMMIT in 0.003 seconds
+[0m15:30:31.923762 [debug] [Thread-2 (]: SQL status: COMMIT in 0.004 seconds
+[0m15:30:31.924310 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.stg_user_events_invalid"
+[0m15:30:31.924526 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.004 seconds
+[0m15:30:31.925845 [debug] [Thread-4 (]: Applying DROP to: "podcast_analytics"."public"."stg_users__dbt_backup"
+[0m15:30:31.927049 [debug] [Thread-2 (]: Applying DROP to: "podcast_analytics"."public"."stg_user_events__dbt_backup"
+[0m15:30:31.927288 [debug] [Thread-3 (]: On model.podcast_analytics.stg_user_events_invalid: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_user_events_invalid"} */
+drop view if exists "podcast_analytics"."public"."stg_user_events_invalid__dbt_backup" cascade
+[0m15:30:31.928692 [debug] [Thread-1 (]: On model.podcast_analytics.stg_episodes: Close
+[0m15:30:31.929191 [debug] [Thread-4 (]: Using postgres connection "model.podcast_analytics.stg_users"
+[0m15:30:31.929658 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.stg_user_events"
+[0m15:30:31.930281 [debug] [Thread-4 (]: On model.podcast_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_users"} */
+drop view if exists "podcast_analytics"."public"."stg_users__dbt_backup" cascade
+[0m15:30:31.930892 [debug] [Thread-2 (]: On model.podcast_analytics.stg_user_events: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.stg_user_events"} */
+drop view if exists "podcast_analytics"."public"."stg_user_events__dbt_backup" cascade
+[0m15:30:31.931190 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c225a0>]}
+[0m15:30:31.931610 [info ] [Thread-1 (]: 1 of 7 OK created sql view model public.stg_episodes ........................... [[32mCREATE VIEW[0m in 0.13s]
+[0m15:30:31.931968 [debug] [Thread-1 (]: Finished running node model.podcast_analytics.stg_episodes
+[0m15:30:31.934501 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.005 seconds
+[0m15:30:31.935194 [debug] [Thread-3 (]: On model.podcast_analytics.stg_user_events_invalid: Close
+[0m15:30:31.935509 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b62be90>]}
+[0m15:30:31.935863 [info ] [Thread-3 (]: 3 of 7 OK created sql view model public.stg_user_events_invalid ................ [[32mCREATE VIEW[0m in 0.13s]
+[0m15:30:31.936100 [debug] [Thread-4 (]: SQL status: DROP VIEW in 0.005 seconds
+[0m15:30:31.936399 [debug] [Thread-3 (]: Finished running node model.podcast_analytics.stg_user_events_invalid
+[0m15:30:31.936612 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.005 seconds
+[0m15:30:31.937255 [debug] [Thread-4 (]: On model.podcast_analytics.stg_users: Close
+[0m15:30:31.938412 [debug] [Thread-2 (]: On model.podcast_analytics.stg_user_events: Close
+[0m15:30:31.938743 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b682690>]}
+[0m15:30:31.939070 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f81cb30>]}
+[0m15:30:31.939534 [info ] [Thread-4 (]: 4 of 7 OK created sql view model public.stg_users .............................. [[32mCREATE VIEW[0m in 0.14s]
+[0m15:30:31.940324 [debug] [Thread-4 (]: Finished running node model.podcast_analytics.stg_users
+[0m15:30:31.939853 [info ] [Thread-2 (]: 2 of 7 OK created sql view model public.stg_user_events ........................ [[32mCREATE VIEW[0m in 0.14s]
+[0m15:30:31.940893 [debug] [Thread-2 (]: Finished running node model.podcast_analytics.stg_user_events
+[0m15:30:31.941660 [debug] [Thread-1 (]: Began running node model.podcast_analytics.int_user_sessions
+[0m15:30:31.941951 [debug] [Thread-3 (]: Began running node model.podcast_analytics.mart_top_episodes
+[0m15:30:31.942264 [info ] [Thread-1 (]: 5 of 7 START sql view model public.int_user_sessions ........................... [RUN]
+[0m15:30:31.942730 [info ] [Thread-3 (]: 6 of 7 START sql view model public.mart_top_episodes ........................... [RUN]
+[0m15:30:31.943122 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.podcast_analytics.stg_episodes, now model.podcast_analytics.int_user_sessions)
+[0m15:30:31.943361 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.podcast_analytics.stg_user_events_invalid, now model.podcast_analytics.mart_top_episodes)
+[0m15:30:31.943671 [debug] [Thread-1 (]: Began compiling node model.podcast_analytics.int_user_sessions
+[0m15:30:31.943891 [debug] [Thread-3 (]: Began compiling node model.podcast_analytics.mart_top_episodes
+[0m15:30:31.947382 [debug] [Thread-1 (]: Writing injected SQL for node "model.podcast_analytics.int_user_sessions"
+[0m15:30:31.950421 [debug] [Thread-3 (]: Writing injected SQL for node "model.podcast_analytics.mart_top_episodes"
+[0m15:30:31.953103 [debug] [Thread-1 (]: Began executing node model.podcast_analytics.int_user_sessions
+[0m15:30:31.953341 [debug] [Thread-3 (]: Began executing node model.podcast_analytics.mart_top_episodes
+[0m15:30:31.958807 [debug] [Thread-1 (]: Writing runtime sql for node "model.podcast_analytics.int_user_sessions"
+[0m15:30:31.962746 [debug] [Thread-3 (]: Writing runtime sql for node "model.podcast_analytics.mart_top_episodes"
+[0m15:30:31.963369 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.mart_top_episodes"
+[0m15:30:31.963634 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.int_user_sessions"
+[0m15:30:31.963874 [debug] [Thread-3 (]: On model.podcast_analytics.mart_top_episodes: BEGIN
+[0m15:30:31.964121 [debug] [Thread-1 (]: On model.podcast_analytics.int_user_sessions: BEGIN
+[0m15:30:31.964351 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:30:31.964568 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:30:31.976697 [debug] [Thread-3 (]: SQL status: BEGIN in 0.012 seconds
+[0m15:30:31.977050 [debug] [Thread-1 (]: SQL status: BEGIN in 0.012 seconds
+[0m15:30:31.977352 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.mart_top_episodes"
+[0m15:30:31.977605 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.int_user_sessions"
+[0m15:30:31.977881 [debug] [Thread-3 (]: On model.podcast_analytics.mart_top_episodes: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.mart_top_episodes"} */
+
+  create view "podcast_analytics"."public"."mart_top_episodes__dbt_tmp"
+    
+    
+  as (
+    -- mart_top_episodes.sql : engagement per episode
+with events as (
+    select * from "podcast_analytics"."public"."stg_user_events"
+),
+
+plays as (
+    select episode_id, count(*) as plays
+    from events
+    where event_type = 'play'
+    group by episode_id
+),
+
+completions as (
+    select episode_id, count(*) as completions
+    from events
+    where event_type = 'complete'
+    group by episode_id
+),
+
+joined as (
+    select coalesce(p.episode_id, c.episode_id) as episode_id,
+           coalesce(p.plays, 0) as plays,
+           coalesce(c.completions, 0) as completions
+    from plays p
+    full outer join completions c using(episode_id)
+)
+select
+    episode_id,
+    plays,
+    completions,
+    
+    ( completions ) / nullif( ( plays ), 0)
+ as completion_rate
+from joined
+order by completion_rate desc
+  );
+[0m15:30:31.978207 [debug] [Thread-1 (]: On model.podcast_analytics.int_user_sessions: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.int_user_sessions"} */
+
+  create view "podcast_analytics"."public"."int_user_sessions__dbt_tmp"
+    
+    
+  as (
+    -- int_user_sessions.sql : derive user listening sessions
+with events as (
+    select * from "podcast_analytics"."public"."stg_user_events"
+),
+
+events_with_lag as (
+    select
+        *,
+        lag(event_ts) over (partition by user_id order by event_ts) as previous_event_ts
+    from events
+),
+
+flagged as (
+    select
+        *,
+        case
+            when previous_event_ts is null
+              or extract(epoch from (event_ts - previous_event_ts))/60 > 30
+            then 1 else 0 end as new_session_flag
+    from events_with_lag
+),
+
+numbered as (
+    select
+        *,
+        sum(new_session_flag) over (partition by user_id order by event_ts) as session_number
+    from flagged
+),
+
+agg as (
+    select
+        user_id,
+        session_number,
+        min(event_ts) as session_start,
+        max(event_ts) as session_end,
+        sum(coalesce(duration, 0)) as total_listening_duration
+    from numbered
+    group by user_id, session_number
+),
+
+final as (
+    select
+        md5(cast(coalesce(cast(user_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(session_number as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as session_id,
+        user_id,
+        session_start,
+        session_end,
+        total_listening_duration as session_duration
+    from agg
+)
+
+select * from final
+  );
+[0m15:30:31.983366 [debug] [Thread-3 (]: SQL status: CREATE VIEW in 0.005 seconds
+[0m15:30:32.020864 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.042 seconds
+[0m15:30:32.021910 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.mart_top_episodes"
+[0m15:30:32.023545 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.int_user_sessions"
+[0m15:30:32.023797 [debug] [Thread-3 (]: On model.podcast_analytics.mart_top_episodes: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.mart_top_episodes"} */
+alter table "podcast_analytics"."public"."mart_top_episodes__dbt_tmp" rename to "mart_top_episodes"
+[0m15:30:32.024032 [debug] [Thread-1 (]: On model.podcast_analytics.int_user_sessions: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.int_user_sessions"} */
+alter table "podcast_analytics"."public"."int_user_sessions__dbt_tmp" rename to "int_user_sessions"
+[0m15:30:32.025847 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m15:30:32.026685 [debug] [Thread-3 (]: On model.podcast_analytics.mart_top_episodes: COMMIT
+[0m15:30:32.026899 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.mart_top_episodes"
+[0m15:30:32.027105 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m15:30:32.027319 [debug] [Thread-3 (]: On model.podcast_analytics.mart_top_episodes: COMMIT
+[0m15:30:32.028111 [debug] [Thread-1 (]: On model.podcast_analytics.int_user_sessions: COMMIT
+[0m15:30:32.028348 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.int_user_sessions"
+[0m15:30:32.028543 [debug] [Thread-1 (]: On model.podcast_analytics.int_user_sessions: COMMIT
+[0m15:30:32.030090 [debug] [Thread-3 (]: SQL status: COMMIT in 0.002 seconds
+[0m15:30:32.031244 [debug] [Thread-3 (]: Applying DROP to: "podcast_analytics"."public"."mart_top_episodes__dbt_backup"
+[0m15:30:32.031457 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m15:30:32.031884 [debug] [Thread-3 (]: Using postgres connection "model.podcast_analytics.mart_top_episodes"
+[0m15:30:32.032924 [debug] [Thread-1 (]: Applying DROP to: "podcast_analytics"."public"."int_user_sessions__dbt_backup"
+[0m15:30:32.033137 [debug] [Thread-3 (]: On model.podcast_analytics.mart_top_episodes: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.mart_top_episodes"} */
+drop view if exists "podcast_analytics"."public"."mart_top_episodes__dbt_backup" cascade
+[0m15:30:32.033605 [debug] [Thread-1 (]: Using postgres connection "model.podcast_analytics.int_user_sessions"
+[0m15:30:32.033857 [debug] [Thread-1 (]: On model.podcast_analytics.int_user_sessions: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.int_user_sessions"} */
+drop view if exists "podcast_analytics"."public"."int_user_sessions__dbt_backup" cascade
+[0m15:30:32.034773 [debug] [Thread-3 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m15:30:32.034978 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m15:30:32.035649 [debug] [Thread-3 (]: On model.podcast_analytics.mart_top_episodes: Close
+[0m15:30:32.036236 [debug] [Thread-1 (]: On model.podcast_analytics.int_user_sessions: Close
+[0m15:30:32.036575 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f936300>]}
+[0m15:30:32.036836 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b32ed20>]}
+[0m15:30:32.037194 [info ] [Thread-3 (]: 6 of 7 OK created sql view model public.mart_top_episodes ...................... [[32mCREATE VIEW[0m in 0.09s]
+[0m15:30:32.037511 [info ] [Thread-1 (]: 5 of 7 OK created sql view model public.int_user_sessions ...................... [[32mCREATE VIEW[0m in 0.09s]
+[0m15:30:32.037822 [debug] [Thread-3 (]: Finished running node model.podcast_analytics.mart_top_episodes
+[0m15:30:32.038094 [debug] [Thread-1 (]: Finished running node model.podcast_analytics.int_user_sessions
+[0m15:30:32.038535 [debug] [Thread-2 (]: Began running node model.podcast_analytics.mart_user_session_metrics
+[0m15:30:32.038833 [info ] [Thread-2 (]: 7 of 7 START sql view model public.mart_user_session_metrics ................... [RUN]
+[0m15:30:32.039095 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.podcast_analytics.stg_user_events, now model.podcast_analytics.mart_user_session_metrics)
+[0m15:30:32.039316 [debug] [Thread-2 (]: Began compiling node model.podcast_analytics.mart_user_session_metrics
+[0m15:30:32.041096 [debug] [Thread-2 (]: Writing injected SQL for node "model.podcast_analytics.mart_user_session_metrics"
+[0m15:30:32.041791 [debug] [Thread-2 (]: Began executing node model.podcast_analytics.mart_user_session_metrics
+[0m15:30:32.043692 [debug] [Thread-2 (]: Writing runtime sql for node "model.podcast_analytics.mart_user_session_metrics"
+[0m15:30:32.044112 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.mart_user_session_metrics"
+[0m15:30:32.045074 [debug] [Thread-2 (]: On model.podcast_analytics.mart_user_session_metrics: BEGIN
+[0m15:30:32.045721 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:30:32.058812 [debug] [Thread-2 (]: SQL status: BEGIN in 0.013 seconds
+[0m15:30:32.059852 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.mart_user_session_metrics"
+[0m15:30:32.060373 [debug] [Thread-2 (]: On model.podcast_analytics.mart_user_session_metrics: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.mart_user_session_metrics"} */
+
+  create view "podcast_analytics"."public"."mart_user_session_metrics__dbt_tmp"
+    
+    
+  as (
+    -- mart_user_session_metrics.sql : user level session KPIs
+with sessions as (
+    select * from "podcast_analytics"."public"."int_user_sessions"
+),
+
+metrics as (
+    select
+        user_id,
+        avg(session_duration) as avg_session_duration,
+        count(*) as sessions,
+        cast(min(session_start) as date) as first_session_date,
+        cast(max(session_end) as date) as last_session_date
+    from sessions
+    group by user_id
+)
+select * from metrics
+  );
+[0m15:30:32.064443 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.004 seconds
+[0m15:30:32.066551 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.mart_user_session_metrics"
+[0m15:30:32.066822 [debug] [Thread-2 (]: On model.podcast_analytics.mart_user_session_metrics: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.mart_user_session_metrics"} */
+alter table "podcast_analytics"."public"."mart_user_session_metrics__dbt_tmp" rename to "mart_user_session_metrics"
+[0m15:30:32.068446 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m15:30:32.070431 [debug] [Thread-2 (]: On model.podcast_analytics.mart_user_session_metrics: COMMIT
+[0m15:30:32.070717 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.mart_user_session_metrics"
+[0m15:30:32.070942 [debug] [Thread-2 (]: On model.podcast_analytics.mart_user_session_metrics: COMMIT
+[0m15:30:32.073491 [debug] [Thread-2 (]: SQL status: COMMIT in 0.002 seconds
+[0m15:30:32.075151 [debug] [Thread-2 (]: Applying DROP to: "podcast_analytics"."public"."mart_user_session_metrics__dbt_backup"
+[0m15:30:32.075677 [debug] [Thread-2 (]: Using postgres connection "model.podcast_analytics.mart_user_session_metrics"
+[0m15:30:32.075917 [debug] [Thread-2 (]: On model.podcast_analytics.mart_user_session_metrics: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "model.podcast_analytics.mart_user_session_metrics"} */
+drop view if exists "podcast_analytics"."public"."mart_user_session_metrics__dbt_backup" cascade
+[0m15:30:32.077052 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m15:30:32.077842 [debug] [Thread-2 (]: On model.podcast_analytics.mart_user_session_metrics: Close
+[0m15:30:32.078225 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '066f942d-923a-4f25-8899-f620c7981015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11f936c00>]}
+[0m15:30:32.078642 [info ] [Thread-2 (]: 7 of 7 OK created sql view model public.mart_user_session_metrics .............. [[32mCREATE VIEW[0m in 0.04s]
+[0m15:30:32.079020 [debug] [Thread-2 (]: Finished running node model.podcast_analytics.mart_user_session_metrics
+[0m15:30:32.079815 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:32.080030 [debug] [MainThread]: On master: BEGIN
+[0m15:30:32.080225 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:30:32.097957 [debug] [MainThread]: SQL status: BEGIN in 0.018 seconds
+[0m15:30:32.098284 [debug] [MainThread]: On master: COMMIT
+[0m15:30:32.098495 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:32.098689 [debug] [MainThread]: On master: COMMIT
+[0m15:30:32.099362 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:30:32.099564 [debug] [MainThread]: On master: Close
+[0m15:30:32.099846 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:30:32.100042 [debug] [MainThread]: Connection 'model.podcast_analytics.int_user_sessions' was properly closed.
+[0m15:30:32.100230 [debug] [MainThread]: Connection 'model.podcast_analytics.mart_user_session_metrics' was properly closed.
+[0m15:30:32.100409 [debug] [MainThread]: Connection 'model.podcast_analytics.mart_top_episodes' was properly closed.
+[0m15:30:32.100584 [debug] [MainThread]: Connection 'model.podcast_analytics.stg_users' was properly closed.
+[0m15:30:32.100844 [info ] [MainThread]: 
+[0m15:30:32.101074 [info ] [MainThread]: Finished running 7 view models in 0 hours 0 minutes and 0.41 seconds (0.41s).
+[0m15:30:32.101852 [debug] [MainThread]: Command end result
+[0m15:30:32.119428 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/samydoreau/global-assignment/dbt/target/manifest.json
+[0m15:30:32.120777 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/samydoreau/global-assignment/dbt/target/semantic_manifest.json
+[0m15:30:32.125155 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/samydoreau/global-assignment/dbt/target/run_results.json
+[0m15:30:32.125468 [info ] [MainThread]: 
+[0m15:30:32.125733 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:30:32.125932 [info ] [MainThread]: 
+[0m15:30:32.126152 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m15:30:32.127808 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.8370252, "process_in_blocks": "0", "process_kernel_time": 0.183453, "process_mem_max_rss": "131973120", "process_out_blocks": "0", "process_user_time": 1.392073}
+[0m15:30:32.128089 [debug] [MainThread]: Command `dbt run` succeeded at 15:30:32.128043 after 0.84 seconds
+[0m15:30:32.128331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1022bb290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x119583d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1195806e0>]}
+[0m15:30:32.128565 [debug] [MainThread]: Flushing usage events
+[0m15:30:32.561841 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:30:33.485189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1111dd7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1123f5cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1123f5670>]}
+
+
+============================== 15:30:33.487578 | 92c74bfb-53c5-428e-ac6d-9a862f478ef8 ==============================
+[0m15:30:33.487578 [info ] [MainThread]: Running with dbt=1.10.3
+[0m15:30:33.487932 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/samydoreau/global-assignment/dbt/logs', 'version_check': 'True', 'profiles_dir': '..', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt test --profiles-dir ..', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:30:33.572080 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '92c74bfb-53c5-428e-ac6d-9a862f478ef8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1111de870>]}
+[0m15:30:33.599177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '92c74bfb-53c5-428e-ac6d-9a862f478ef8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ec0da0>]}
+[0m15:30:33.599840 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m15:30:33.655276 [debug] [MainThread]: checksum: 1bfacb87e6914c9942cfa2c4badfc1df19d859fe8ec086286ef238a7d920f97b, vars: {}, profile: , target: , version: 1.10.3
+[0m15:30:33.724618 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:30:33.725044 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:30:33.751818 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '92c74bfb-53c5-428e-ac6d-9a862f478ef8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115bbbad0>]}
+[0m15:30:33.802668 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/samydoreau/global-assignment/dbt/target/manifest.json
+[0m15:30:33.803912 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/samydoreau/global-assignment/dbt/target/semantic_manifest.json
+[0m15:30:33.817420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '92c74bfb-53c5-428e-ac6d-9a862f478ef8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115cc1a30>]}
+[0m15:30:33.817780 [info ] [MainThread]: Found 7 models, 2 seeds, 8 data tests, 3 sources, 549 macros
+[0m15:30:33.818007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '92c74bfb-53c5-428e-ac6d-9a862f478ef8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1124a6480>]}
+[0m15:30:33.819132 [info ] [MainThread]: 
+[0m15:30:33.819360 [info ] [MainThread]: Concurrency: 4 threads (target='local')
+[0m15:30:33.819540 [info ] [MainThread]: 
+[0m15:30:33.819844 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:30:33.821973 [debug] [ThreadPool]: Acquiring new postgres connection 'list_podcast_analytics_public'
+[0m15:30:33.846198 [debug] [ThreadPool]: Using postgres connection "list_podcast_analytics_public"
+[0m15:30:33.846514 [debug] [ThreadPool]: On list_podcast_analytics_public: BEGIN
+[0m15:30:33.846709 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:30:33.869127 [debug] [ThreadPool]: SQL status: BEGIN in 0.022 seconds
+[0m15:30:33.869454 [debug] [ThreadPool]: Using postgres connection "list_podcast_analytics_public"
+[0m15:30:33.869667 [debug] [ThreadPool]: On list_podcast_analytics_public: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "connection_name": "list_podcast_analytics_public"} */
+select
+      'podcast_analytics' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'podcast_analytics' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'podcast_analytics' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m15:30:33.873778 [debug] [ThreadPool]: SQL status: SELECT 10 in 0.004 seconds
+[0m15:30:33.874712 [debug] [ThreadPool]: On list_podcast_analytics_public: ROLLBACK
+[0m15:30:33.875824 [debug] [ThreadPool]: On list_podcast_analytics_public: Close
+[0m15:30:33.879118 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:33.879315 [debug] [MainThread]: On master: BEGIN
+[0m15:30:33.879478 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:30:33.892688 [debug] [MainThread]: SQL status: BEGIN in 0.013 seconds
+[0m15:30:33.892965 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:33.893208 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m15:30:33.898709 [debug] [MainThread]: SQL status: SELECT 7 in 0.005 seconds
+[0m15:30:33.899916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '92c74bfb-53c5-428e-ac6d-9a862f478ef8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115cfbbf0>]}
+[0m15:30:33.900199 [debug] [MainThread]: On master: ROLLBACK
+[0m15:30:33.900824 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:33.900993 [debug] [MainThread]: On master: BEGIN
+[0m15:30:33.901824 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m15:30:33.901990 [debug] [MainThread]: On master: COMMIT
+[0m15:30:33.902150 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:33.902306 [debug] [MainThread]: On master: COMMIT
+[0m15:30:33.902805 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:30:33.902972 [debug] [MainThread]: On master: Close
+[0m15:30:33.904286 [debug] [Thread-1 (]: Began running node test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8
+[0m15:30:33.904548 [debug] [Thread-2 (]: Began running node test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7
+[0m15:30:33.904784 [debug] [Thread-3 (]: Began running node test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422
+[0m15:30:33.905177 [debug] [Thread-4 (]: Began running node test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7
+[0m15:30:33.905014 [info ] [Thread-1 (]: 1 of 8 START test accepted_values_stg_user_events_event_type__play__pause__seek__complete  [RUN]
+[0m15:30:33.905482 [info ] [Thread-2 (]: 2 of 8 START test accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue  [RUN]
+[0m15:30:33.905714 [info ] [Thread-3 (]: 3 of 8 START test not_null_stg_episodes_episode_id ............................. [RUN]
+[0m15:30:33.905927 [info ] [Thread-4 (]: 4 of 8 START test not_null_stg_user_events_event_id ............................ [RUN]
+[0m15:30:33.906166 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_podcast_analytics_public, now test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8)
+[0m15:30:33.906436 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7'
+[0m15:30:33.906667 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422'
+[0m15:30:33.906886 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7'
+[0m15:30:33.907082 [debug] [Thread-1 (]: Began compiling node test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8
+[0m15:30:33.907280 [debug] [Thread-2 (]: Began compiling node test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7
+[0m15:30:33.907501 [debug] [Thread-3 (]: Began compiling node test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422
+[0m15:30:33.907731 [debug] [Thread-4 (]: Began compiling node test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7
+[0m15:30:33.917548 [debug] [Thread-1 (]: Writing injected SQL for node "test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8"
+[0m15:30:33.921191 [debug] [Thread-2 (]: Writing injected SQL for node "test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7"
+[0m15:30:33.926758 [debug] [Thread-3 (]: Writing injected SQL for node "test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422"
+[0m15:30:33.928746 [debug] [Thread-4 (]: Writing injected SQL for node "test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7"
+[0m15:30:33.929543 [debug] [Thread-4 (]: Began executing node test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7
+[0m15:30:33.929770 [debug] [Thread-3 (]: Began executing node test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422
+[0m15:30:33.929974 [debug] [Thread-1 (]: Began executing node test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8
+[0m15:30:33.930182 [debug] [Thread-2 (]: Began executing node test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7
+[0m15:30:33.938277 [debug] [Thread-4 (]: Writing runtime sql for node "test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7"
+[0m15:30:33.939447 [debug] [Thread-3 (]: Writing runtime sql for node "test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422"
+[0m15:30:33.940563 [debug] [Thread-1 (]: Writing runtime sql for node "test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8"
+[0m15:30:33.941802 [debug] [Thread-2 (]: Writing runtime sql for node "test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7"
+[0m15:30:33.942514 [debug] [Thread-2 (]: Using postgres connection "test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7"
+[0m15:30:33.942828 [debug] [Thread-2 (]: On test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7: BEGIN
+[0m15:30:33.943105 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:30:33.943321 [debug] [Thread-3 (]: Using postgres connection "test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422"
+[0m15:30:33.943533 [debug] [Thread-4 (]: Using postgres connection "test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7"
+[0m15:30:33.943730 [debug] [Thread-1 (]: Using postgres connection "test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8"
+[0m15:30:33.943986 [debug] [Thread-3 (]: On test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422: BEGIN
+[0m15:30:33.944180 [debug] [Thread-4 (]: On test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7: BEGIN
+[0m15:30:33.944371 [debug] [Thread-1 (]: On test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8: BEGIN
+[0m15:30:33.944554 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:30:33.944734 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:30:33.944918 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:30:33.956900 [debug] [Thread-2 (]: SQL status: BEGIN in 0.014 seconds
+[0m15:30:33.957125 [debug] [Thread-2 (]: Using postgres connection "test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7"
+[0m15:30:33.957468 [debug] [Thread-2 (]: On test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        issue_type as value_field,
+        count(*) as n_records
+
+    from "podcast_analytics"."public"."stg_user_events_invalid"
+    group by issue_type
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'missing_event_type','invalid_event_type','missing_timestamp','malformed_timestamp','missing_user_id','missing_episode_id','other_issue'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:30:33.957740 [debug] [Thread-3 (]: SQL status: BEGIN in 0.013 seconds
+[0m15:30:33.957920 [debug] [Thread-4 (]: SQL status: BEGIN in 0.013 seconds
+[0m15:30:33.958158 [debug] [Thread-3 (]: Using postgres connection "test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422"
+[0m15:30:33.958351 [debug] [Thread-4 (]: Using postgres connection "test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7"
+[0m15:30:33.958559 [debug] [Thread-3 (]: On test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select episode_id
+from "podcast_analytics"."public"."stg_episodes"
+where episode_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:30:33.958778 [debug] [Thread-4 (]: On test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select event_id
+from "podcast_analytics"."public"."stg_user_events"
+where event_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:30:33.959073 [debug] [Thread-1 (]: SQL status: BEGIN in 0.014 seconds
+[0m15:30:33.959277 [debug] [Thread-1 (]: Using postgres connection "test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8"
+[0m15:30:33.959492 [debug] [Thread-1 (]: On test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        event_type as value_field,
+        count(*) as n_records
+
+    from "podcast_analytics"."public"."stg_user_events"
+    group by event_type
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'play','pause','seek','complete'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:30:33.960317 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m15:30:33.962559 [debug] [Thread-3 (]: On test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422: ROLLBACK
+[0m15:30:33.963405 [debug] [Thread-3 (]: On test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422: Close
+[0m15:30:33.963760 [info ] [Thread-3 (]: 3 of 8 PASS not_null_stg_episodes_episode_id ................................... [[32mPASS[0m in 0.06s]
+[0m15:30:33.964080 [debug] [Thread-3 (]: Finished running node test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422
+[0m15:30:33.964308 [debug] [Thread-3 (]: Began running node test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77
+[0m15:30:33.964569 [info ] [Thread-3 (]: 5 of 8 START test not_null_stg_users_user_id ................................... [RUN]
+[0m15:30:33.964837 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.podcast_analytics.not_null_stg_episodes_episode_id.30984c0422, now test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77)
+[0m15:30:33.965052 [debug] [Thread-3 (]: Began compiling node test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77
+[0m15:30:33.967196 [debug] [Thread-3 (]: Writing injected SQL for node "test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77"
+[0m15:30:33.967783 [debug] [Thread-3 (]: Began executing node test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77
+[0m15:30:33.970877 [debug] [Thread-3 (]: Writing runtime sql for node "test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77"
+[0m15:30:33.971327 [debug] [Thread-3 (]: Using postgres connection "test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77"
+[0m15:30:33.971538 [debug] [Thread-3 (]: On test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77: BEGIN
+[0m15:30:33.971729 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:30:33.972361 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.014 seconds
+[0m15:30:33.972583 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.013 seconds
+[0m15:30:33.973474 [debug] [Thread-2 (]: On test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7: ROLLBACK
+[0m15:30:33.974477 [debug] [Thread-1 (]: On test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8: ROLLBACK
+[0m15:30:33.975750 [debug] [Thread-2 (]: On test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7: Close
+[0m15:30:33.976111 [debug] [Thread-1 (]: On test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8: Close
+[0m15:30:33.976569 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.017 seconds
+[0m15:30:33.977729 [info ] [Thread-2 (]: 2 of 8 PASS accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue  [[32mPASS[0m in 0.07s]
+[0m15:30:33.978415 [info ] [Thread-1 (]: 1 of 8 PASS accepted_values_stg_user_events_event_type__play__pause__seek__complete  [[32mPASS[0m in 0.07s]
+[0m15:30:33.979441 [debug] [Thread-4 (]: On test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7: ROLLBACK
+[0m15:30:33.979789 [debug] [Thread-2 (]: Finished running node test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7
+[0m15:30:33.980127 [debug] [Thread-1 (]: Finished running node test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8
+[0m15:30:33.980460 [debug] [Thread-2 (]: Began running node test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16
+[0m15:30:33.980756 [debug] [Thread-3 (]: SQL status: BEGIN in 0.009 seconds
+[0m15:30:33.980987 [debug] [Thread-4 (]: On test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7: Close
+[0m15:30:33.981222 [debug] [Thread-1 (]: Began running node test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7
+[0m15:30:33.981477 [info ] [Thread-2 (]: 6 of 8 START test unique_stg_episodes_episode_id ............................... [RUN]
+[0m15:30:33.981719 [debug] [Thread-3 (]: Using postgres connection "test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77"
+[0m15:30:33.982042 [info ] [Thread-4 (]: 4 of 8 PASS not_null_stg_user_events_event_id .................................. [[32mPASS[0m in 0.08s]
+[0m15:30:33.982283 [info ] [Thread-1 (]: 7 of 8 START test unique_stg_user_events_event_id .............................. [RUN]
+[0m15:30:33.983044 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.podcast_analytics.accepted_values_stg_user_events_invalid_issue_type__missing_event_type__invalid_event_type__missing_timestamp__malformed_timestamp__missing_user_id__missing_episode_id__other_issue.09ad3b2fc7, now test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16)
+[0m15:30:33.983295 [debug] [Thread-3 (]: On test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select user_id
+from "podcast_analytics"."public"."stg_users"
+where user_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:30:33.983614 [debug] [Thread-4 (]: Finished running node test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7
+[0m15:30:33.983839 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.podcast_analytics.accepted_values_stg_user_events_event_type__play__pause__seek__complete.47468a40f8, now test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7)
+[0m15:30:33.984059 [debug] [Thread-2 (]: Began compiling node test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16
+[0m15:30:33.984313 [debug] [Thread-4 (]: Began running node test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b
+[0m15:30:33.984538 [debug] [Thread-1 (]: Began compiling node test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7
+[0m15:30:33.988025 [debug] [Thread-2 (]: Writing injected SQL for node "test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16"
+[0m15:30:33.988632 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.004 seconds
+[0m15:30:33.988893 [info ] [Thread-4 (]: 8 of 8 START test unique_stg_users_user_id ..................................... [RUN]
+[0m15:30:33.991005 [debug] [Thread-1 (]: Writing injected SQL for node "test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7"
+[0m15:30:33.991992 [debug] [Thread-3 (]: On test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77: ROLLBACK
+[0m15:30:33.992376 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.podcast_analytics.not_null_stg_user_events_event_id.3ab7415ad7, now test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b)
+[0m15:30:33.992845 [debug] [Thread-2 (]: Began executing node test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16
+[0m15:30:33.993195 [debug] [Thread-4 (]: Began compiling node test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b
+[0m15:30:33.993407 [debug] [Thread-1 (]: Began executing node test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7
+[0m15:30:33.997023 [debug] [Thread-2 (]: Writing runtime sql for node "test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16"
+[0m15:30:33.997304 [debug] [Thread-3 (]: On test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77: Close
+[0m15:30:33.999530 [debug] [Thread-4 (]: Writing injected SQL for node "test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b"
+[0m15:30:34.000856 [debug] [Thread-1 (]: Writing runtime sql for node "test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7"
+[0m15:30:34.001350 [info ] [Thread-3 (]: 5 of 8 PASS not_null_stg_users_user_id ......................................... [[32mPASS[0m in 0.04s]
+[0m15:30:34.001898 [debug] [Thread-2 (]: Using postgres connection "test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16"
+[0m15:30:34.002194 [debug] [Thread-3 (]: Finished running node test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77
+[0m15:30:34.002413 [debug] [Thread-4 (]: Began executing node test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b
+[0m15:30:34.002809 [debug] [Thread-1 (]: Using postgres connection "test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7"
+[0m15:30:34.003036 [debug] [Thread-2 (]: On test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16: BEGIN
+[0m15:30:34.004348 [debug] [Thread-4 (]: Writing runtime sql for node "test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b"
+[0m15:30:34.004591 [debug] [Thread-1 (]: On test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7: BEGIN
+[0m15:30:34.004822 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:30:34.005074 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:30:34.005465 [debug] [Thread-4 (]: Using postgres connection "test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b"
+[0m15:30:34.005691 [debug] [Thread-4 (]: On test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b: BEGIN
+[0m15:30:34.005893 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m15:30:34.014720 [debug] [Thread-1 (]: SQL status: BEGIN in 0.010 seconds
+[0m15:30:34.015071 [debug] [Thread-2 (]: SQL status: BEGIN in 0.010 seconds
+[0m15:30:34.015377 [debug] [Thread-1 (]: Using postgres connection "test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7"
+[0m15:30:34.015641 [debug] [Thread-2 (]: Using postgres connection "test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16"
+[0m15:30:34.015916 [debug] [Thread-1 (]: On test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    event_id as unique_field,
+    count(*) as n_records
+
+from "podcast_analytics"."public"."stg_user_events"
+where event_id is not null
+group by event_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:30:34.016184 [debug] [Thread-2 (]: On test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    episode_id as unique_field,
+    count(*) as n_records
+
+from "podcast_analytics"."public"."stg_episodes"
+where episode_id is not null
+group by episode_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:30:34.016423 [debug] [Thread-4 (]: SQL status: BEGIN in 0.011 seconds
+[0m15:30:34.016718 [debug] [Thread-4 (]: Using postgres connection "test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b"
+[0m15:30:34.016971 [debug] [Thread-4 (]: On test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b: /* {"app": "dbt", "dbt_version": "1.10.3", "profile_name": "podcast_analytics", "target_name": "local", "node_id": "test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    user_id as unique_field,
+    count(*) as n_records
+
+from "podcast_analytics"."public"."stg_users"
+where user_id is not null
+group by user_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:30:34.017698 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m15:30:34.018065 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.001 seconds
+[0m15:30:34.018962 [debug] [Thread-2 (]: On test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16: ROLLBACK
+[0m15:30:34.019651 [debug] [Thread-4 (]: On test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b: ROLLBACK
+[0m15:30:34.020167 [debug] [Thread-2 (]: On test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16: Close
+[0m15:30:34.020381 [debug] [Thread-4 (]: On test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b: Close
+[0m15:30:34.020798 [info ] [Thread-2 (]: 6 of 8 PASS unique_stg_episodes_episode_id ..................................... [[32mPASS[0m in 0.04s]
+[0m15:30:34.021489 [info ] [Thread-4 (]: 8 of 8 PASS unique_stg_users_user_id ........................................... [[32mPASS[0m in 0.03s]
+[0m15:30:34.022429 [debug] [Thread-2 (]: Finished running node test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16
+[0m15:30:34.022729 [debug] [Thread-4 (]: Finished running node test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b
+[0m15:30:34.037658 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.021 seconds
+[0m15:30:34.038687 [debug] [Thread-1 (]: On test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7: ROLLBACK
+[0m15:30:34.039302 [debug] [Thread-1 (]: On test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7: Close
+[0m15:30:34.039702 [info ] [Thread-1 (]: 7 of 8 PASS unique_stg_user_events_event_id .................................... [[32mPASS[0m in 0.06s]
+[0m15:30:34.040143 [debug] [Thread-1 (]: Finished running node test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7
+[0m15:30:34.042317 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:34.042607 [debug] [MainThread]: On master: BEGIN
+[0m15:30:34.042825 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:30:34.049544 [debug] [MainThread]: SQL status: BEGIN in 0.007 seconds
+[0m15:30:34.049827 [debug] [MainThread]: On master: COMMIT
+[0m15:30:34.050021 [debug] [MainThread]: Using postgres connection "master"
+[0m15:30:34.050198 [debug] [MainThread]: On master: COMMIT
+[0m15:30:34.050579 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:30:34.050801 [debug] [MainThread]: On master: Close
+[0m15:30:34.051078 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:30:34.051259 [debug] [MainThread]: Connection 'test.podcast_analytics.unique_stg_user_events_event_id.6926ae65d7' was properly closed.
+[0m15:30:34.051430 [debug] [MainThread]: Connection 'test.podcast_analytics.unique_stg_episodes_episode_id.de98524a16' was properly closed.
+[0m15:30:34.051598 [debug] [MainThread]: Connection 'test.podcast_analytics.not_null_stg_users_user_id.980dfc1b77' was properly closed.
+[0m15:30:34.051765 [debug] [MainThread]: Connection 'test.podcast_analytics.unique_stg_users_user_id.c2ff477e6b' was properly closed.
+[0m15:30:34.051985 [info ] [MainThread]: 
+[0m15:30:34.052238 [info ] [MainThread]: Finished running 8 data tests in 0 hours 0 minutes and 0.23 seconds (0.23s).
+[0m15:30:34.053033 [debug] [MainThread]: Command end result
+[0m15:30:34.108756 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/samydoreau/global-assignment/dbt/target/manifest.json
+[0m15:30:34.109817 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/samydoreau/global-assignment/dbt/target/semantic_manifest.json
+[0m15:30:34.113202 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/samydoreau/global-assignment/dbt/target/run_results.json
+[0m15:30:34.113399 [info ] [MainThread]: 
+[0m15:30:34.113610 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:30:34.113777 [info ] [MainThread]: 
+[0m15:30:34.113961 [info ] [MainThread]: Done. PASS=8 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=8
+[0m15:30:34.115723 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.6666234, "process_in_blocks": "0", "process_kernel_time": 0.143797, "process_mem_max_rss": "133660672", "process_out_blocks": "0", "process_user_time": 1.174453}
+[0m15:30:34.115978 [debug] [MainThread]: Command `dbt test` succeeded at 15:30:34.115938 after 0.67 seconds
+[0m15:30:34.116193 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111f51b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104cd3290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1111bcbc0>]}
+[0m15:30:34.116396 [debug] [MainThread]: Flushing usage events
+[0m15:30:34.472505 [debug] [MainThread]: An error was encountered while trying to flush usage events
