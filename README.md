@@ -71,7 +71,7 @@ make up  # or: docker compose up -d
 - `cp env.example .env` - Creates your local environment file with database credentials
 - `make up` - Starts a PostgreSQL database in Docker with the settings from your `.env` file
 
-The database will be available at `localhost:5432` with the credentials you specified.
+The database will be available at `localhost:5432` with the credentials specified in the `.env` file.
 
 ## 2. Load sample events
 
@@ -79,22 +79,7 @@ The database will be available at `localhost:5432` with the credentials you spec
 make load-data FILE=data/event_logs.jsonl
 ```
 
-## 3. Run dbt & generate ERD
-
-```bash
-make dbt
-```
-
-**Note:** ERD generation requires additional setup. For now, you can view the data model structure in `docs/DATA_MODELING.md`.
-
-To generate ERDs in the future, you can install `dbt-erd` separately:
-
-```bash
-pip install dbt-erd
-cd dbt && dbt-erd render models/ --output ../docs/erd.svg
-```
-
-## 4. Spin down Postgres
+## 3. Spin down Postgres
 
 When you're done, you can stop and remove the Postgres container with:
 

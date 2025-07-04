@@ -18,7 +18,7 @@ We adopt a classic **star-schema** centred on an **event fact table** (`stg_user
               +----------------+
 ```
 
-Note: the fact is currently materialised as a _view_ called `stg_user_events`; in a production warehouse you would usually capture this as an incremental table (e.g. `fact_user_events`).
+Note: the fact is currently materialised as a _view_ called `stg_user_events`; in a production warehouse we would implement this as an incremental table (e.g. `fact_user_events`) to ensure performance is adequate.
 
 ### Event Types & JSON shape (actual fields)
 
@@ -71,7 +71,7 @@ An ERD visually shows how your data models connect to each other - think of it a
 ### How to generate the ERD:
 
 ```bash
-# 1. Install dependencies (includes dbt-erd and graphviz)
+# 1. Install dependencies (includes dbterd and graphviz)
 pip install -r requirements.txt
 
 # 2. Build your dbt models first (so dbt-erd can analyze them)
