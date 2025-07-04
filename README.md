@@ -111,10 +111,16 @@ After a successful run of `make dbt`, you can manually inspect the objects creat
       - `mart_user_session_metrics`
       - And all the intermediate/staging models, as they are also created as views by default.
 
-    - **List all tables (the seeds and raw data):**
+    - **List all tables (seeds and raw tables):**
 
       ```sql
       \dt
+      ```
+
+      Or, to list views :
+
+      ```sql
+      \dv
       ```
 
       You should see:
