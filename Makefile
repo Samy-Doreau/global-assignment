@@ -26,11 +26,14 @@ dbt: ## Run dbt deps, seed, run, test
 	dbt run --profiles-dir $(PWD) && \
 	dbt test --profiles-dir $(PWD)
 
+dbt-docs: ## Run dbt docs
+	cd dbt && dbt docs generate --profiles-dir $(PWD) && dbt docs serve --profiles-dir $(PWD)
+
 elementary-init: ## Run elementary
 	cd dbt && dbt run --profiles-dir $(PWD) --select elementary
 
 elementary-report: ## Run elementary report
 	cd dbt && edr report --profiles-dir $(PWD)
 
-pipeline: ## Run full pipeline (truncate->seed->load->dbt->export)
+pipeline: ## Run full pipeline (truncate→seed→load→dbt→elementary→export)
 	python3 scripts/pipeline.py --events $(FILE) 

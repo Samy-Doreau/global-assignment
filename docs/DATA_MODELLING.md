@@ -22,6 +22,11 @@ graph TD
 2. **intermediate** – `int_user_sessions` (sessionisation)
 3. **marts** – `fact_user_events`, `dim_users`, `dim_episodes`, plus KPI marts
 
+See below the lineage graph (generated with elementary) : 
+![dbt lineage](dbt_lineage.png)
+
+
+
 ### Event Types & JSON shape (actual fields)
 
 The raw line-delimited JSON arriving in the landing bucket uses these canonical fields:

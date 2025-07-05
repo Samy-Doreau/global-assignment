@@ -6,7 +6,8 @@ Steps:
 2. Seed CSVs via dbt (users, episodes)
 3. Load JSONL events via loader script
 4. Run dbt models & tests
-5. Export mart views to CSV locally under data/exports/
+5. Build Elementary monitoring models & generate HTML observability report
+6. Export mart views to CSV locally under data/exports/
 
 Run:
     python scripts/pipeline.py --events data/event_logs.json
@@ -86,9 +87,15 @@ def main():
     # Step 4: dbt deps+run+test
     run_cmd(f"cd {DBT_DIR} && dbt deps --profiles-dir .. && dbt run --profiles-dir .. && dbt test --profiles-dir ..")
 
-    # Step 5: export marts
+    # Step 5: Elementary – build monitoring tables & generate report
+    # The first command materializes Elementary models (schema, logs tables).
+    # The second command produces an HTML report (dbt/edr_target/elementary_report.html)
+    run_cmd(f"cd {DBT_DIR} && dbt run --profiles-dir .. --select elementary")
+    run_cmd(f"cd {DBT_DIR} && edr report --profiles-dir ..")
+
+    # Step 6: export marts
     export_marts()
-    print("🏁 Pipeline completed successfully!")
+    print("🏁 Pipeline completed successfully – observability report available at dbt/edr_target/elementary_report.html")
 
 
 if __name__ == "__main__":
