@@ -6,7 +6,7 @@ model-paths: ["models"]
 seed-paths: ["../seeds"]
 models:
   elementary:
-    +schema: elementary
+    +schema: public
   podcast_analytics:
     1.staging:
       +materialized: view

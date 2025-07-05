@@ -27,7 +27,7 @@ dbt: ## Run dbt deps, seed, run, test
 	dbt test --profiles-dir $(PWD)
 
 elementary-init: ## Run elementary
-	cd dbt && dbt run --select elementary
+	cd dbt && dbt run --profiles-dir $(PWD) --select elementary
 
 elementary-report: ## Run elementary report
 	cd dbt && edr report --profiles-dir $(PWD)
