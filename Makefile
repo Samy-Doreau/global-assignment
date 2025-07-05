@@ -26,6 +26,9 @@ dbt: ## Run dbt deps, seed, run, test
 	dbt run --profiles-dir $(PWD) && \
 	dbt test --profiles-dir $(PWD)
 
+dbt-test: ## Run dbt test
+	cd dbt && dbt test --profiles-dir $(PWD)
+
 dbt-docs: ## Run dbt docs
 	cd dbt && dbt docs generate --profiles-dir $(PWD) && dbt docs serve --profiles-dir $(PWD)
 

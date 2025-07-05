@@ -143,7 +143,7 @@ After a successful run of `make dbt`, you can manually inspect the objects creat
 
     - **List all views (the marts):**
 
-      ```sql
+      ```bash
       \dv
       ```
 
@@ -189,7 +189,11 @@ After a successful run of `make dbt`, you can manually inspect the objects creat
 - On Apple Silicon you may need to allow x86 emulation for the Postgres image.
 - In case OSX security prevents the installation of Docker Desktop, follow the instructions [in this thread](https://github.com/docker/for-mac/issues/7520#issuecomment-2578291149) to resolve.
 
+
+# Data modelling
+Please review the data modelling approach and notes : 
+- [Data modelling](docs/DATA_MODELLING.md)
 # Best practices and proposed terraform repo structure
 
 - [Best Practices & Architecture Overview](docs/BEST_PRACTICES.md)
-- [Terraform Repo Structure](docs/terraform_repo_structure.md)
+- [Terraform Repo Structure](docs/terraform_repo_structure.md) and [Example terraform quickstart guide](terraform/README.md)

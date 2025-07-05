@@ -1,4 +1,4 @@
-## Terraform repo skeleton
+## Proposed Terraform repo skeleton
 
 ```text
 terraform/

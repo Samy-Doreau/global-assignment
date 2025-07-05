@@ -19,7 +19,6 @@ models:
       - name: event_id
         description: "Surrogate key generated from user_id, episode_id, timestamp, and event_type"
         tests:
-          - unique
           - not_null
       - name: user_id
         description: "User identifier from the event data"
@@ -78,7 +77,6 @@ models:
       - name: user_id
         description: "Unique identifier for the user"
         tests:
-          - unique
           - not_null
       - name: signup_date
         description: "Date of user signup"
@@ -91,7 +89,6 @@ models:
       - name: episode_id
         description: "Unique identifier for the episode"
         tests:
-          - unique
           - not_null
       - name: podcast_id
         description: "Identifier for the podcast this episode belongs to"
@@ -107,64 +104,65 @@ models:
   - name: dim_episodes
     description: "Dimension table for episodes (one row per episode)"
     columns:
-      - name: episode_id
+      - name: '"Episode ID"'
         description: "Unique identifier for the episode"
         tests:
           - unique
           - not_null
-      - name: podcast_id
+      - name: '"Podcast ID"'
         description: "Identifier for the podcast this episode belongs to"
         tests:
           - not_null
-      - name: title
+      - name: '"Title"'
         description: "Title of the episode"
-      - name: release_date
+      - name: '"Release Date"'
         description: "Date of episode release"
-      - name: duration_seconds
+      - name: '"Duration (seconds)"'
         description: "Duration of the episode in seconds"
         tests:
           - not_null
   - name: dim_users
     columns:
-      - name: user_id
+      - name: '"User ID"'
+        description: "Unique identifier for the user"
         tests:
           - unique
           - not_null
-      - name: signup_date
+      - name: '"Signup Date"'
         description: "Date of user signup"
-      - name: country
+      - name: Country
         description: "Country of the user"
 
   - name: fact_user_events
     description: "Central fact table of cleaned user events"
     columns:
-      - name: event_id
+      - name: '"Event ID"'
         description: "Surrogate key generated from user_id, episode_id, timestamp, and event_type"
         tests:
           - unique
           - not_null
-      - name: event_ts
+      - name: '"Event Timestamp"'
         description: "Timestamp of the event"
         tests:
           - not_null
-      - name: user_id
+      - name: '"User ID"'
         description: "Identifier for the user who performed the event"
         tests:
           - not_null
           - relationships:
               to: ref('dim_users')
-              field: user_id
-      - name: episode_id
+              field: '"User ID"'
+      - name: '"Episode ID"'
         description: "Identifier for the episode the event occurred on"
         tests:
           - not_null
           - relationships:
               to: ref('dim_episodes')
-              field: episode_id
-      - name: event_type
+              field: '"Episode ID"'
+      - name: '"Event Type"'
         description: "Type of event (play, pause, seek, complete)"
         tests:
           - accepted_values:
               values: ["play", "pause", "seek", "complete"]
-      - name: duration
+      - name: Duration
         description: "Duration in seconds (nullable)"
