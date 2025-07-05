@@ -26,8 +26,11 @@ dbt: ## Run dbt deps, seed, run, test
 	dbt run --profiles-dir $(PWD) && \
 	dbt test --profiles-dir $(PWD)
 
-erd: ## Generate ERD SVG in docs/ (requires: pip install dbterd)
-	cd dbt && dbt docs generate && dbterd run -ad . --output ../docs/erd.svg
+elementary-init: ## Run elementary
+	cd dbt && dbt run --select elementary
+
+elementary-report: ## Run elementary report
+	cd dbt && edr report --profiles-dir $(PWD)
 
 pipeline: ## Run full pipeline (truncate->seed->load->dbt->export)
 	python3 scripts/pipeline.py --events $(FILE) 

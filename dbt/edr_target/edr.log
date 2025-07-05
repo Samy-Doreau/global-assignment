@@ -1,0 +1,38 @@
+2025-07-05 10:13:07 — INFO — Running with edr=0.19.1
+2025-07-05 10:13:07 — INFO — Installing packages for edr internal dbt package...
+2025-07-05 10:13:07 — INFO — Running dbt command --log-format json deps --project-dir /Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/dbt_project --profiles-dir /Users/samydoreau/global-assignment
+2025-07-05 10:13:08 — DEBUG — Running dbt command --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}} --project-dir /Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/dbt_project --profiles-dir /Users/samydoreau/global-assignment
+2025-07-05 10:13:10 — DEBUG — Result bytes size for command '['--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_latest_invocation", "macro_args": {}}', '--project-dir', '/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/dbt_project', '--profiles-dir', '/Users/samydoreau/global-assignment']' is 270
+[31;20m2025-07-05 10:13:10 — ERROR — Unable to get the latest invocation: list index out of range[0m
+2025-07-05 10:13:10 — DEBUG — Running dbt command --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}} --project-dir /Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/dbt_project --profiles-dir /Users/samydoreau/global-assignment
+2025-07-05 10:13:11 — DEBUG — Result bytes size for command '['--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_adapter_type_and_unique_id", "macro_args": {}}', '--project-dir', '/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/dbt_project', '--profiles-dir', '/Users/samydoreau/global-assignment']' is 456
+2025-07-05 10:13:11 — DEBUG — Running dbt command --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}} --project-dir /Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/dbt_project --profiles-dir /Users/samydoreau/global-assignment
+2025-07-05 10:13:11 — DEBUG — Result bytes size for command '['--log-format', 'json', 'run-operation', 'elementary.log_macro_results', '--args', '{"macro_name": "elementary_cli.get_elementary_database_and_schema", "macro_args": {}}', '--project-dir', '/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/dbt_project', '--profiles-dir', '/Users/samydoreau/global-assignment']' is 454
+2025-07-05 10:13:11 — INFO — Elementary's database and schema: '"podcast_analytics.public"'
+2025-07-05 10:13:11 — INFO — Running dbt command --log-format json run-operation elementary.log_macro_results --args {"macro_name": "elementary_cli.get_test_results", "macro_args": {"days_back": 7, "invocations_per_test": 720, "disable_passed_test_metrics": false}} --project-dir /Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/dbt_project --profiles-dir /Users/samydoreau/global-assignment
+[31;20m2025-07-05 10:13:12 — ERROR — Could not generate the report - Error: Failed to run dbt command.
+{"info": {"name": "RunningOperationCaughtError", "code": "Q001", "msg": "Encountered an error while running operation: Database Error\n  relation \"public.elementary_test_results\" does not exist\n  LINE 17:         select * from \"podcast_analytics\".\"public\".\"elementa...\n                                 ^", "level": "error", "invocationId": "67987821-b007-4013-ac43-65c68732aad0", "pid": 78604, "thread": "MainThread", "ts": "2025-07-05T09:13:11.933829Z"}, "data": {"exc": "Database Error\n  relation \"public.elementary_test_results\" does not exist\n  LINE 17:         select * from \"podcast_analytics\".\"public\".\"elementa...\n                                 ^"}}
+Please reach out to our community for help with this issue.[0m
+Traceback (most recent call last):
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/api/report/report.py", line 84, in get_report_data
+    tests_api = TestsAPI(
+                ^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 52, in __init__
+    self.test_results_db_rows = self._get_test_results_db_rows(
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/api/tests/tests.py", line 64, in _get_test_results_db_rows
+    return self.tests_fetcher.get_all_test_results_db_rows(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/monitor/fetchers/tests/tests.py", line 26, in get_all_test_results_db_rows
+    run_operation_response = self.dbt_runner.run_operation(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/clients/dbt/command_line_dbt_runner.py", line 177, in run_operation
+    result = self._run_command(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/clients/dbt/command_line_dbt_runner.py", line 114, in _run_command
+    result = self._inner_run_command(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samydoreau/global-assignment/venv/lib/python3.12/site-packages/elementary/clients/dbt/api_dbt_runner.py", line 54, in _inner_run_command
+    raise DbtCommandError(
+elementary.exceptions.exceptions.DbtCommandError: Failed to run dbt command.
+{"info": {"name": "RunningOperationCaughtError", "code": "Q001", "msg": "Encountered an error while running operation: Database Error\n  relation \"public.elementary_test_results\" does not exist\n  LINE 17:         select * from \"podcast_analytics\".\"public\".\"elementa...\n                                 ^", "level": "error", "invocationId": "67987821-b007-4013-ac43-65c68732aad0", "pid": 78604, "thread": "MainThread", "ts": "2025-07-05T09:13:11.933829Z"}, "data": {"exc": "Database Error\n  relation \"public.elementary_test_results\" does not exist\n  LINE 17:         select * from \"podcast_analytics\".\"public\".\"elementa...\n                                 ^"}}

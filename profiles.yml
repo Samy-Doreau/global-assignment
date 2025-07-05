@@ -10,3 +10,16 @@ podcast_analytics:
       dbname: "{{ env_var('POSTGRES_DB') }}"
       schema: public
       threads: 4
+
+elementary:
+  target: local
+  outputs:
+    local:
+      type: postgres
+      host: localhost
+      user: "{{ env_var('POSTGRES_USER') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD') }}"
+      port: 5432
+      dbname: "{{ env_var('POSTGRES_DB') }}"
+      schema: public
+      threads: 4

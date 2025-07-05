@@ -5,6 +5,8 @@ profile: podcast_analytics
 model-paths: ["models"]
 seed-paths: ["../seeds"]
 models:
+  elementary:
+    +schema: elementary
   podcast_analytics:
     1.staging:
       +materialized: view
