@@ -51,4 +51,4 @@ Start with `XSMALL`, auto-suspend after 60 s idle:
 ALTER WAREHOUSE analytics_xs SET AUTO_SUSPEND = 60;
 ```
 
-Enable auto-resume so orchestration just works.
+Enable auto-resume and auto-suspend on warehouses.
