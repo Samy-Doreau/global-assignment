@@ -12,22 +12,53 @@ sources:
         identifier: raw_episodes
 
 models:
+  
   - name: stg_user_events
-    description: "Typed raw event records"
+    description: "Typed raw event records from JSONB with validation and surrogate key generation"
     columns:
       - name: event_id
+        description: "Surrogate key generated from user_id, episode_id, timestamp, and event_type"
         tests:
           - unique
           - not_null
+      - name: user_id
+        description: "User identifier from the event data"
+        tests:
+          - not_null
+      - name: episode_id
+        description: "Episode identifier from the event data"
+        tests:
+          - not_null
+      - name: event_ts
+        description: "Timestamp of the event, parsed and validated"
+        tests:
+          - not_null
       - name: event_type
+        description: "Type of event (play, pause, seek, complete)"
         tests:
           - accepted_values:
               values: ["play", "pause", "seek", "complete"]
+      - name: duration
+        description: "Duration in seconds (nullable)"
+     
 
   - name: stg_user_events_invalid
     description: "Invalid event records for data quality investigation"
     columns:
+      - name: data
+        description: "Raw JSONB event data that failed validation"
+      - name: user_id
+        description: "User identifier from the event data (may be null for invalid events)"
+      - name: episode_id
+        description: "Episode identifier from the event data (may be null for invalid events)"
+      - name: timestamp
+        description: "Raw timestamp string from the event data (may be null or malformed)"
+      - name: event_type
+        description: "Event type from the event data (may be null or invalid)"
+      - name: duration
+        description: "Duration value from the event data (may be null)"
       - name: issue_type
+        description: "Categorization of the validation issue found in this record"
         tests:
           - accepted_values:
               values:
@@ -42,25 +73,55 @@ models:
                 ]
 
   - name: stg_users
+    description: "Clean user reference data"
     columns:
       - name: user_id
+        description: "Unique identifier for the user"
         tests:
           - unique
           - not_null
+      - name: signup_date
+        description: "Date of user signup"
+      - name: country
+        description: "Country of the user"
 
   - name: stg_episodes
+    description: "Clean episode reference data"
     columns:
       - name: episode_id
+        description: "Unique identifier for the episode"
         tests:
           - unique
           - not_null
-  - name: dim_episodes
-    columns:
-      - name: episode_id
+      - name: podcast_id
+        description: "Identifier for the podcast this episode belongs to"
         tests:
-          - unique
           - not_null
       - name: title
+        description: "Title of the episode"
+      - name: release_date
+        description: "Date of episode release"
+      - name: duration_seconds
+        description: "Duration of the episode in seconds"
+
+  - name: dim_episodes
+    description: "Dimension table for episodes (one row per episode)"
+    columns:
+      - name: episode_id
+        description: "Unique identifier for the episode"
+        tests:
+          - unique
+          - not_null
+      - name: podcast_id
+        description: "Identifier for the podcast this episode belongs to"
+        tests:
+          - not_null
+      - name: title
+        description: "Title of the episode"
+      - name: release_date
+        description: "Date of episode release"
+      - name: duration_seconds
+        description: "Duration of the episode in seconds"
         tests:
           - not_null
   - name: dim_users
@@ -69,22 +130,41 @@ models:
         tests:
           - unique
           - not_null
+      - name: signup_date
+        description: "Date of user signup"
+      - name: country
+        description: "Country of the user"
 
   - name: fact_user_events
+    description: "Central fact table of cleaned user events"
     columns:
+      - name: event_id
+        description: "Unique identifier for the event"
+        tests:
+          - unique
+          - not_null
       - name: user_id
+        description: "Identifier for the user who performed the event"
         tests:
           - not_null
           - relationships:
               to: ref('dim_users')
               field: user_id
       - name: episode_id
+        description: "Identifier for the episode the event occurred on"
         tests:
           - not_null
           - relationships:
               to: ref('dim_episodes')
               field: episode_id
+      - name: event_ts
+        description: "Timestamp when the event occurred"
+        tests:
+          - not_null
       - name: event_type
+        description: "Type of event (play, pause, seek, complete)"
         tests:
           - accepted_values:
               values: ["play", "pause", "seek", "complete"]
+      - name: duration
+        description: "Duration associated with the event (in seconds)"
