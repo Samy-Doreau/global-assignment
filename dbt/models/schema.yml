@@ -139,9 +139,13 @@ models:
     description: "Central fact table of cleaned user events"
     columns:
       - name: event_id
-        description: "Unique identifier for the event"
+        description: "Surrogate key generated from user_id, episode_id, timestamp, and event_type"
         tests:
           - unique
+          - not_null
+      - name: event_ts
+        description: "Timestamp of the event"
+        tests:
           - not_null
       - name: user_id
         description: "Identifier for the user who performed the event"
@@ -157,14 +161,10 @@ models:
           - relationships:
               to: ref('dim_episodes')
               field: episode_id
-      - name: event_ts
-        description: "Timestamp when the event occurred"
-        tests:
-          - not_null
       - name: event_type
         description: "Type of event (play, pause, seek, complete)"
         tests:
           - accepted_values:
               values: ["play", "pause", "seek", "complete"]
       - name: duration
-        description: "Duration associated with the event (in seconds)"
+        description: "Duration in seconds (nullable)"

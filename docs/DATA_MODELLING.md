@@ -7,23 +7,20 @@ We now materialise the fact as `fact_user_events` (table in `3.marts`) and expos
 - `fact_user_events.user_id` → `dim_users.user_id`
 - `fact_user_events.episode_id` → `dim_episodes.episode_id`
 
-### Updated star-schema
+### Star-schema
 
-```mermaid
-graph TD
-  F[fact_user_events] -- user_id --> DU[dim_users]
-  F -- episode_id --> DE[dim_episodes]
-  F -- session_id *> DS[dim_sessions] %% derived from int_user_sessions
-```
+![star schema](img/star_schema.png)
 
-### Revised dbt Layering
+In a production setting this schema would be further normalised with additional dimensions : dim_country, dim_date, dim_podcast. We wanted to keep the schema as simple as possible for the present demo /exercise.
+
+### dbt Layering
 
 1. **staging** – `stg_*` views (schema-on-read)
 2. **intermediate** – `int_user_sessions` (sessionisation)
 3. **marts** – `fact_user_events`, `dim_users`, `dim_episodes`, plus KPI marts
 
 See below the lineage graph (generated with elementary) : 
-![dbt lineage](dbt_lineage.png)
+![dbt lineage](img/dbt_lineage.png)
 
 
 
@@ -73,8 +70,8 @@ This approach builds resilience against schema changes by encapsulating the enti
 
 Continue reading the inline comments in each SQL model for deeper context.
 
-### Why derive sessions?
+### Rationale behing the model to calculate sessions
 
-The assignment calls for metrics such as **average session duration per user** – a classic streaming‐app KPI. A _session_ groups consecutive events separated by no more than 30 minutes of inactivity. Computing this in an **intermediate** model keeps the heavy window-function logic out of the thin marts and makes the session table reusable by multiple downstream marts (e.g. churn analysis, retention curves).
+The assignment calls for metrics such as **average session duration per user** – a classic streaming‐app KPI. A _session_ groups consecutive events separated by no more than 30 minutes of inactivity. Computing this in an **intermediate** model keeps the heavy window-function logic out of the marts and makes the session table reusable by multiple downstream marts (e.g. churn analysis, retention curves).
 
-Even if a stakeholder only asked for _top completed episodes_ today, surfacing `int_user_sessions` future-proofs the model; new questions about "time spent listening" can be answered without rewriting raw logic.
+Even if a stakeholder only asked for _top completed episodes_ today, surfacing `int_user_sessions` is likely to be useful for future analysis; new questions about "time spent listening" can be answered without rewriting raw logic.
