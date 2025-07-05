@@ -145,6 +145,9 @@ models:
         description: "Timestamp of the event"
         tests:
           - not_null
+          - dbt_utils.accepted_range:
+              min_value: "'2025-03-01'::timestamp"
+              inclusive: true
       - name: '"User ID"'
         description: "Identifier for the user who performed the event"
         tests:
