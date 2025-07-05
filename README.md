@@ -85,6 +85,7 @@ Run dbt clean, deps, seed, run and test with
 make dbt
 ```
 
+
 ## 4. Generate observability report (Elementary)
 
 Elementary provides data-quality monitoring, test aggregation and lineage visualisation on top of our dbt project.
@@ -101,7 +102,7 @@ Elementary provides data-quality monitoring, test aggregation and lineage visual
    make elementary-report
    ```
 
-   The file will be created under `dbt/edr_target/elementary_report.html` and opens in the browser. It contains
+   The file will be created under `dbt/edr_target/elementary_report.html` and will open automatically in the browser. It contains
     - test results
     - freshness metrics and 
     - lineage graph of our models.
