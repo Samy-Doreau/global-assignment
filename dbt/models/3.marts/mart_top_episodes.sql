@@ -3,31 +3,49 @@ with events as (
     select * from {{ ref('stg_user_events') }}
 ),
 
-plays as (
-    select episode_id, count(*) as plays
+-- Get users who played each episode
+episode_plays as (
+    select distinct episode_id, user_id
     from events
     where event_type = 'play'
-    group by episode_id
 ),
 
-completions as (
-    select episode_id, count(*) as completions
+-- Get users who completed each episode
+episode_completions as (
+    select distinct episode_id, user_id
     from events
     where event_type = 'complete'
-    group by episode_id
 ),
 
-joined as (
-    select coalesce(p.episode_id, c.episode_id) as episode_id,
-           coalesce(p.plays, 0) as plays,
-           coalesce(c.completions, 0) as completions
-    from plays p
-    full outer join completions c using(episode_id)
+-- Join to ensure we only count completions from users who played
+episode_engagement as (
+    select 
+        ep.episode_id,
+        ep.user_id,
+        case when ec.user_id is not null then 1 else 0 end as completed
+    from episode_plays ep
+    left join episode_completions ec 
+        on ep.episode_id = ec.episode_id 
+        and ep.user_id = ec.user_id
+),
+
+-- Aggregate to episode level
+episode_metrics as (
+    select
+        episode_id,
+        count(*) as unique_plays,
+        sum(completed) as unique_completions
+    from episode_engagement
+    group by episode_id
 )
+
 select
     episode_id,
-    plays,
-    completions,
-    {{ dbt_utils.safe_divide('completions', 'plays') }} as completion_rate
-from joined
+    unique_plays,
+    unique_completions,
+    case 
+        when unique_plays = 0 then null
+        else round((unique_completions::float / unique_plays::float)::numeric, 3)
+    end as completion_rate
+from episode_metrics
 order by completion_rate desc
