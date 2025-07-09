@@ -3,5 +3,7 @@ dbt/target/*
 venv/*
 dbt/target/*
 dbt/logs/*
+dbt/edr_target/*
 dbt/dbt_packages/*
 data/exports/*
+dbt/logs/*
